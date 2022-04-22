@@ -15,6 +15,39 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'app-football' => [
+        'district' => [
+            '1' => 'Quận 1',
+            '2' => 'Quận 2',
+            '3' => 'Quận 3',
+            '4' => 'Quận 4',
+            '5' => 'Quận 5',
+            '6' => 'Quận 6',
+            '7' => 'Quận 7',
+            '8' => 'Quận 8',
+            '9' => 'Quận 9',
+            '10' => 'Quận 10',
+            '11' => 'Quận 11',
+            '13' => 'Quận Tân Bình',
+            '14' => 'Quận Bình Chánh',
+            '15' => 'Quận Bình Thạnh',
+            '12' => 'Quận Phú Nhuận'
+        ],
+        'role' =>[
+            '1' => 'Admin',
+            '2' => 'Vendor'
+        ],
+        'size' => [
+            '1' => "Sân 5",
+            '2' => "Sân 7",
+            '3' => "Sân 11"
+        ],
+        'is_active' =>[
+            '0' => "In Active",
+            '1' => "Active",
+        ]
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
