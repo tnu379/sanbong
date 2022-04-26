@@ -36,7 +36,7 @@
                                     class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboard</span>
                             </a>
 
-                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                            <ul style="list-style-type: none;" class="">
                                 @if (session('role') == 1)
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
@@ -61,8 +61,25 @@
                                             </li>
                                         </ul>
                                     </li>
-                                @else
                                     <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Payment</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @elseif(session('role') == 2)
+                                    {{-- <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
                                             href="javascript:;" title="E-commerce">
                                             <span class="tio-circle nav-indicator-icon"></span>
@@ -181,42 +198,112 @@
                                                 </a>
                                             </li>
                                         </ul>
+                                    </li> --}}
+                                    <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Yard</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('yard_index') }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('yard_create') }}"
+                                                    title="Timeline">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Add Yard</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Order</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('orders_index') }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Payment</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Booking</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('filter') }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @elseif(session('role') == 3)
+                                    <li class="navbar-vertical-aside-has-menu ">
+                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                            href="javascript:;" title="Projects">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Booking</span>
+                                        </a>
+
+                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="{{ route('filter') }}"
+                                                    title="Overview">
+                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                    <span class="text-truncate">Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 @endif
-
                                 <li class="navbar-vertical-aside-has-menu ">
                                     <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
                                         href="javascript:;" title="Projects">
                                         <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Yard</span>
+                                        <span class="text-truncate">Profile</span>
                                     </a>
 
                                     <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                         <li class="nav-item">
-                                            <a class="nav-link " href="{{route('yard_index')}}" title="Overview">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Overview</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="{{route('yard_create')}}" title="Timeline">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Add Yard</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Projects">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Order</span>
-                                    </a>
-
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="{{route('yard_index')}}" title="Overview">
+                                            <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
+                                                title="Overview">
                                                 <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                 <span class="text-truncate">Overview</span>
                                             </a>
@@ -224,7 +311,11 @@
                                     </ul>
                                 </li>
 
-                                <li class="navbar-vertical-aside-has-menu ">
+
+
+
+
+                                {{-- <li class="navbar-vertical-aside-has-menu ">
                                     <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
                                         href="javascript:;" title="Project">
                                         <span class="tio-circle nav-indicator-icon"></span>
@@ -271,13 +362,13 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">Referrals</span>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <!-- End Pages -->
 
                         <!-- Apps -->
-                        <li class="navbar-vertical-aside-has-menu ">
+                        {{-- <li class="navbar-vertical-aside-has-menu ">
                             <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
                                 title="Apps">
                                 <i class="tio-apps nav-icon"></i>
@@ -313,11 +404,11 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <!-- End Apps -->
 
                         <!-- Authentication -->
-                        <li class="navbar-vertical-aside-has-menu ">
+                        {{-- <li class="navbar-vertical-aside-has-menu ">
                             <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
                                 title="Authentication">
                                 <i class="tio-lock-outlined nav-icon"></i>
@@ -473,17 +564,17 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <!-- End Authentication -->
 
-                        <li class="nav-item ">
+                        {{-- <li class="nav-item ">
                             <a class="js-nav-tooltip-link nav-link " href="welcome-page.html" title="Welcome page"
                                 data-placement="left">
                                 <i class="tio-visible-outlined nav-icon"></i>
                                 <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Welcome
                                     Page</span>
                             </a>
-                        </li>
+                        </li> --}}
                 </div>
             </div>
     </aside>

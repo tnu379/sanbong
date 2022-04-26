@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orders;
+use App\Models\Times;
+use App\Models\Users;
+use App\Models\Yard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class OrdersController extends Controller
 {
@@ -13,7 +19,17 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $times = Config::get('app.app-football.time');
+        $sizes = Config::get('app.app-football.size');
+        $prices = Config::get('app.app-football.price');
+        $orders = Orders::get()->where('user_id', Auth::id());
+        return view('orders.index', [
+            'times' => $times,
+            'orders' => $orders,
+            'sizes' => $sizes,
+            'prices' => $prices,
+            'count_order' => $orders->count()
+        ]);
     }
 
     /**
@@ -23,7 +39,21 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        //
+        dd(1);
+    }
+
+    public function booking($id, Request $request)
+    {
+        return view('orders.booking', ['id' => $id]);
+    }
+
+    public function getEvents($id, Request $request)
+    {
+        $data = Orders::whereDate('start', '>=', $request->start)
+            ->whereDate('end', '<=', $request->end)
+            ->where('yard_id', $id)
+            ->get(['id', 'title', 'start', 'end']);
+        return response()->json($data);
     }
 
     /**
@@ -34,7 +64,19 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $yard = Yard::find($request->yard_id);
+        $hour = date("H", strtotime(str_replace('-', '/', $request->start)));
+        $orderData = [
+            'title' => $request->title,
+            'yard_id' => $request->yard_id,
+            'customer_id' => Auth::id(),
+            'user_id' => $yard->users_id,
+            'amount' => Config::get('app.app-football.price')[$hour] ?? 90000,
+            'status' => 0,
+            'start' => $request->start,
+            'end'  => $request->end,
+        ];
+        $data = Orders::create($orderData);
     }
 
     /**
@@ -68,7 +110,7 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo 1;
     }
 
     /**
@@ -79,6 +121,7 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Orders::find($id);
+        $data->delete();
     }
 }

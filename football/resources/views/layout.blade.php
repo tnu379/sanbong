@@ -16,13 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{asset('assets\css\vendor.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets\vendor\icon-set\style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets\css\vendor.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets\vendor\icon-set\style.css') }}">
 
 
 
     <!-- CSS Front Template -->
-    <link rel="stylesheet" href="{{asset('assets\css\theme.min.css?v=1.0')}}">
+    <link rel="stylesheet" href="{{ asset('assets\css\theme.min.css?v=1.0') }}">
 </head>
 
 <body class="footer-offset">
@@ -33,24 +33,46 @@
     </main>
 
 
-    <script src="{{asset('assets\js\demo.js')}}"></script>
-    <script src="{{asset('assets\vendor\hs-navbar-vertical-aside\hs-navbar-vertical-aside-mini-cache.js')}}"></script>
+    <script src="{{ asset('assets\js\demo.js') }}"></script>
+    <script src="{{ asset('assets\vendor\hs-navbar-vertical-aside\hs-navbar-vertical-aside-mini-cache.js') }}"></script>
 
     <!-- JS Implementing Plugins -->
-    <script src="{{asset('assets\js\vendor.min.js')}}"></script>
-    <script src="{{asset('assets\vendor\chart.js\dist\Chart.min.js')}}"></script>
-    <script src="{{asset('assets\vendor\chart.js.extensions\chartjs-extensions.js')}}"></script>
-    <script src="{{asset('assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js')}}"></script>
-
+    <script src="{{ asset('assets\js\vendor.min.js') }}"></script>
+    <script src="{{ asset('assets\js\daypilot-all.min') }}"></script>
+    <script src="{{ asset('assets\vendor\chart.js\dist\Chart.min.js') }}"></script>
+    <script src="{{ asset('assets\vendor\chart.js.extensions\chartjs-extensions.js') }}"></script>
+    <script src="{{ asset('assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
 
 
     <!-- JS Front -->
-    <script src="{{asset('assets\js\theme.min.js')}}"></script>
+    <script src="{{ asset('assets\js\theme.min.js') }}"></script>
 
     <!-- JS Plugins Init. -->
 
     <script>
         $(document).on('ready', function() {
+            $(".showhr").click(function() {
+                $(this).closest('tr').nextUntil("tr:has(.showhr)").toggle("slow", function() {});
+            });
+            var calendar = $('#calendar').fullCalendar({
+                editable: true,
+                header: {
+                    left: 'prev, next today',
+                    center: 'title',
+                    right: 'month, agendaWeek, agendaDay'
+                },
+                selectable: true,
+                selectHelper: true,
+            });
+
+            $('#orders_form_btn').on('click', function() {
+                var month = $('$month').value;
+                var day = $('$day').value;
+                console.log(month);
+            });
             $('#password, #confirm_password').on('keyup', function() {
                 if ($('#password').val() == $('#confirm_password').val()) {
                     $('#message').html('Matching').css('color', 'green');

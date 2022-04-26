@@ -204,4 +204,15 @@ class UserController extends Controller
         }
         return back()->with('msg', 'username or password wrong');
     }
+    public function registerStore(Request $request){
+        $userData = [
+            'email' => $request['email'],
+            'password' =>  Hash::make($request['password']),
+            'full_name' => $request['full_name'] ?? "",
+            'phone' => $request['phone'] ?? 0,
+            'role' => 3
+        ];
+        $data = Users::create($userData);
+        return redirect('login');
+    }
 }

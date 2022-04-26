@@ -24,4 +24,7 @@ class Users extends Model
     ];
     protected $table  = 'users';
     public $timestamps = true;
+    public function yards(){
+        return $this->hasMany(Yard::class);
+    }
 }

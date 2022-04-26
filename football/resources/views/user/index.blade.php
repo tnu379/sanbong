@@ -38,7 +38,7 @@
 
                         <div class="row align-items-center gx-2">
                             <div class="col">
-                                <span class="js-counter display-4 text-dark">{{$count}}</span>
+                                <span class="js-counter display-4 text-dark">{{ $count }}</span>
                             </div>
                         </div>
                         <!-- End Row -->
@@ -55,7 +55,7 @@
 
                         <div class="row align-items-center gx-2">
                             <div class="col">
-                                <span class="js-counter display-4 text-dark">{{$countActiveMember}}</span>
+                                <span class="js-counter display-4 text-dark">{{ $countActiveMember }}</span>
                             </div>
 
                         </div>
@@ -82,9 +82,8 @@
                                         <i class="tio-search"></i>
                                     </div>
                                 </div>
-                                <input id="datatableSearch" type="search" class="form-control"
-                                       placeholder="Search users"
-                                       aria-label="Search users">
+                                <input id="datatableSearch" type="search" class="form-control" placeholder="Search users"
+                                    aria-label="Search users">
                             </div>
                             <!-- End Search -->
                         </form>
@@ -115,80 +114,79 @@
             <!-- Table -->
             <div class="table-responsive datatable-custom">
                 <table id="datatable"
-                       class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
-                       data-hs-datatables-options='{
-                              "columnDefs": [{
-                                  "targets": [0, 7],
-                                  "orderable": false
-                                }],
-                              "order": [],
-                              "info": {
-                                "totalQty": "#datatableWithPaginationInfoTotalQty"
-                              },
-                              "search": "#datatableSearch",
-                              "entries": "#datatableEntries",
-                              "pageLength": 15,
-                              "isResponsive": false,
-                              "isShowPaging": false,
-                              "pagination": "datatablePagination"
-                            }'>
+                    class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                    data-hs-datatables-options='{
+                                  "columnDefs": [{
+                                      "targets": [0, 7],
+                                      "orderable": false
+                                    }],
+                                  "order": [],
+                                  "info": {
+                                    "totalQty": "#datatableWithPaginationInfoTotalQty"
+                                  },
+                                  "search": "#datatableSearch",
+                                  "entries": "#datatableEntries",
+                                  "pageLength": 15,
+                                  "isResponsive": false,
+                                  "isShowPaging": false,
+                                  "pagination": "datatablePagination"
+                                }'>
                     <thead class="thead-light">
-                    <tr>
-                        <th class="table-column-pr-0">
-                            <div class="custom-control custom-checkbox">
-                                <input id="datatableCheckAll" type="checkbox" class="custom-control-input">
-                                <label class="custom-control-label" for="datatableCheckAll"></label>
-                            </div>
-                        </th>
-                        <th class="table-column-pl-0">Name</th>
-                        <th>Address</th>
-                        <th>District</th>
-                        <th>Status</th>
-                        <th>Role</th>
-                        <th></th>
-                    </tr>
+                        <tr>
+                            <th class="table-column-pr-0">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="datatableCheckAll" type="checkbox" class="custom-control-input">
+                                    <label class="custom-control-label" for="datatableCheckAll"></label>
+                                </div>
+                            </th>
+                            <th class="table-column-pl-0">Name</th>
+                            <th>Address</th>
+                            <th>District</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $user)
-                        <tr>
-                            <td class="table-column-pr-0">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
-                                    <label class="custom-control-label" for="usersDataCheck1"></label>
-                                </div>
-                            </td>
-                            <td class="table-column-pl-0">
-                                <a class="d-flex align-items-center" href="{{route('user_edit',$user->id)}}">
-                                    <div class="avatar avatar-circle">
-                                        <img class="avatar-img" src="{{asset($user->img)}}"
-                                             alt="Image Description">
+                        @foreach ($users as $user)
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                                        <label class="custom-control-label" for="usersDataCheck1"></label>
                                     </div>
-                                    <div class="ml-3">
-                                        <span class="d-block h5 text-hover-primary mb-0">{{$user->full_name}}<i
-                                                class="tio-verified text-primary" data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Top endorsed"></i></span>
-                                        <span class="d-block font-size-sm text-body">{{$user->email}}</span>
-                                    </div>
-                                </a>
-                            </td>
-                            <td>
-                                <span class="d-block font-size-sm">address: {{$user->address}}</span>
-                                <span class="d-block font-size-sm">ward: {{$user->ward}}</span>
-                                <span class="d-block font-size-sm">street: {{$user->street}}</span>
-                            </td>
-                            <td>{{$district[$user->district]}}<span class="text-hide">Code: GB</span></td>
-                            <td>
-                                @if($user->status == 1)
-                                    <span class="legend-indicator bg-success"></span>Active
-                                @else
-                                    <span class="legend-indicator bg-danger"></span>In Active
-                                @endif
-                            </td>
-                            <td>Vendor</td>
-                            <td><a class="btn btn-danger" href="{{route('user_del',$user->id)}}">Delete</a></td>
-                        </tr>
-                    @endforeach
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="d-flex align-items-center" href="{{ route('user_edit', $user->id) }}">
+                                        <div class="avatar avatar-circle">
+                                            <img class="avatar-img" src="{{ asset($user->img) }}"
+                                                alt="Image Description">
+                                        </div>
+                                        <div class="ml-3">
+                                            <span class="d-block h5 text-hover-primary mb-0">{{ $user->full_name }}<i
+                                                    class="tio-verified text-primary" data-toggle="tooltip"
+                                                    data-placement="top" title="Top endorsed"></i></span>
+                                            <span class="d-block font-size-sm text-body">{{ $user->email }}</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block font-size-sm">address: {{ $user->address }}</span>
+                                    <span class="d-block font-size-sm">ward: {{ $user->ward }}</span>
+                                    <span class="d-block font-size-sm">street: {{ $user->street }}</span>
+                                </td>
+                                <td>{{ $district[$user->district] }}<span class="text-hide">Code: GB</span></td>
+                                <td>
+                                    @if ($user->status == 1)
+                                        <span class="legend-indicator bg-success"></span>Active
+                                    @else
+                                        <span class="legend-indicator bg-danger"></span>In Active
+                                    @endif
+                                </td>
+                                <td>Vendor</td>
+                                <td><a class="btn btn-danger" href="{{ route('user_del', $user->id) }}">Delete</a></td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -204,11 +202,11 @@
 
                             <!-- Select -->
                             <select id="datatableEntries" class="js-select2-custom" data-hs-select2-options='{
-                                    "minimumResultsForSearch": "Infinity",
-                                    "customClass": "custom-select custom-select-sm custom-select-borderless",
-                                    "dropdownAutoWidth": true,
-                                    "width": true
-                                  }'>
+                                        "minimumResultsForSearch": "Infinity",
+                                        "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                        "dropdownAutoWidth": true,
+                                        "width": true
+                                      }'>
                                 <option value="10">10</option>
                                 <option value="15" selected="">15</option>
                                 <option value="20">20</option>

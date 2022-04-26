@@ -5,21 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model
+class YardTime extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'id',
         'yard_id',
-        'customer_id',
-        'amount',
-        'status',
-        'schedule_date',
-        'start',
-        'end',
-        'title'
+        'time_id',
+        'month_id',
     ];
-    protected $table  = 'orders';
+    protected $table  = 'yard_times';
     public $timestamps = true;
-
+    public function yard()
+    {
+        return $this->belongsTo(Yard::class);
+    }
 }

@@ -5,23 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Yard extends Model
+class Times extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'users_id',
-        'name',
-        'price',
-        'is_active',
-        'size',
-        'status'
+        'id',
+        'number'
     ];
-    protected $table  = 'yard';
+    protected $table  = 'times';
     public $timestamps = true;
     public function yardTimes(){
         return $this->hasMany(YardTime::class);
-    }
-    public function user(){
-        return $this->belongsTo(User::class);
     }
 }

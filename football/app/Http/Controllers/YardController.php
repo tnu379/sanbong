@@ -18,7 +18,7 @@ class YardController extends Controller
      */
     public function index()
     {
-        $yards = Yard::get()->where('user_id', Auth::id());
+        $yards = Yard::get()->where('users_id', Auth::id());
         $sizes = Config::get('app.app-football.size');
 
         return view('yard.index',[
