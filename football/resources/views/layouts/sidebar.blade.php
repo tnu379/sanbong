@@ -10,14 +10,14 @@
                     <a class="navbar-brand" href="index.html" aria-label="Front">
                         <img class="navbar-brand-logo" src="{{ asset('assets\svg\logos\logo.svg') }}" alt="Logo">
                         <img class="navbar-brand-logo-mini" src="{{ asset('assets\svg\logos\logo-short.svg') }}"
-                            alt="Logo">
+                             alt="Logo">
                     </a>
 
                     <!-- End Logo -->
 
                     <!-- Navbar Vertical Toggle -->
                     <button type="button"
-                        class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                            class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
                         <i class="tio-clear tio-lg"></i>
                     </button>
                     <!-- End Navbar Vertical Toggle -->
@@ -30,7 +30,7 @@
                         <!-- Pages -->
                         <li class="navbar-vertical-aside-has-menu ">
                             <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
-                                title="Pages">
+                               title="Pages">
                                 <i class="tio-pages-outlined nav-icon"></i>
                                 <span
                                     class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboard</span>
@@ -40,7 +40,7 @@
                                 @if (session('role') == 1)
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Users">
+                                           href="javascript:;" title="Users">
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">Users</span>
                                         </a>
@@ -61,23 +61,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="navbar-vertical-aside-has-menu ">
-                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
-                                            <span class="tio-circle nav-indicator-icon"></span>
-                                            <span class="text-truncate">Payment</span>
-                                        </a>
 
-                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
-                                                    title="Overview">
-                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                    <span class="text-truncate">Overview</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
                                 @elseif(session('role') == 2)
                                     {{-- <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
@@ -201,7 +185,7 @@
                                     </li> --}}
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
+                                           href="javascript:;" title="Projects">
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">Yard</span>
                                         </a>
@@ -209,14 +193,14 @@
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
                                                 <a class="nav-link " href="{{ route('yard_index') }}"
-                                                    title="Overview">
+                                                   title="Overview">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Overview</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="{{ route('yard_create') }}"
-                                                    title="Timeline">
+                                                   title="Timeline">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Add Yard</span>
                                                 </a>
@@ -225,7 +209,7 @@
                                     </li>
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
+                                           href="javascript:;" title="Projects">
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">Order</span>
                                         </a>
@@ -233,41 +217,25 @@
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
                                                 <a class="nav-link " href="{{ route('orders_index') }}"
-                                                    title="Overview">
+                                                   title="Overview">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Overview</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="navbar-vertical-aside-has-menu ">
-                                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
-                                            <span class="tio-circle nav-indicator-icon"></span>
-                                            <span class="text-truncate">Payment</span>
-                                        </a>
 
-                                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
-                                                    title="Overview">
-                                                    <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                    <span class="text-truncate">Overview</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
+                                           href="javascript:;" title="Projects">
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">Booking</span>
                                         </a>
 
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
-                                                <a class="nav-link " href="{{ route('filter') }}"
-                                                    title="Overview">
+                                                <a class="nav-link " href="{{ route('vendor_booking') }}"
+                                                   title="Overview">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Overview</span>
                                                 </a>
@@ -277,7 +245,7 @@
                                 @elseif(session('role') == 3)
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Projects">
+                                           href="javascript:;" title="Projects">
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">Booking</span>
                                         </a>
@@ -285,7 +253,7 @@
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
                                                 <a class="nav-link " href="{{ route('filter') }}"
-                                                    title="Overview">
+                                                   title="Overview">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Overview</span>
                                                 </a>
@@ -295,7 +263,24 @@
                                 @endif
                                 <li class="navbar-vertical-aside-has-menu ">
                                     <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Projects">
+                                       href="javascript:;" title="Projects">
+                                        <span class="tio-circle nav-indicator-icon"></span>
+                                        <span class="text-truncate">Payment</span>
+                                    </a>
+
+                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="{{ route('payment_index')}}"
+                                               title="Overview">
+                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                <span class="text-truncate">Overview</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-vertical-aside-has-menu ">
+                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                       href="javascript:;" title="Projects">
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">Profile</span>
                                     </a>
@@ -303,16 +288,13 @@
                                     <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                         <li class="nav-item">
                                             <a class="nav-link " href="{{ route('user_edit', Auth::id()) }}"
-                                                title="Overview">
+                                               title="Overview">
                                                 <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                 <span class="text-truncate">Overview</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-
-
-
 
 
                                 {{-- <li class="navbar-vertical-aside-has-menu ">
@@ -368,213 +350,213 @@
                         <!-- End Pages -->
 
                         <!-- Apps -->
-                        {{-- <li class="navbar-vertical-aside-has-menu ">
-                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
-                                title="Apps">
-                                <i class="tio-apps nav-icon"></i>
-                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Apps
-                                    <span class="badge badge-info badge-pill ml-1">Hot</span></span>
-                            </a>
+                    {{-- <li class="navbar-vertical-aside-has-menu ">
+                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
+                            title="Apps">
+                            <i class="tio-apps nav-icon"></i>
+                            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Apps
+                                <span class="badge badge-info badge-pill ml-1">Hot</span></span>
+                        </a>
 
-                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="apps-kanban.html" title="Kanban">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Kanban</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="apps-calendar.html" title="Calendar">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Calendar <span
-                                                class="badge badge-info badge-pill ml-1">New</span></span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="apps-invoice-generator.html"
-                                        title="Invoice Generator">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Invoice Generator</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="apps-file-manager.html" title="File Manager">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">File Manager</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                        <!-- End Apps -->
+                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                            <li class="nav-item">
+                                <a class="nav-link " href="apps-kanban.html" title="Kanban">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Kanban</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="apps-calendar.html" title="Calendar">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Calendar <span
+                                            class="badge badge-info badge-pill ml-1">New</span></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="apps-invoice-generator.html"
+                                    title="Invoice Generator">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Invoice Generator</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="apps-file-manager.html" title="File Manager">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">File Manager</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> --}}
+                    <!-- End Apps -->
 
                         <!-- Authentication -->
-                        {{-- <li class="navbar-vertical-aside-has-menu ">
-                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
-                                title="Authentication">
-                                <i class="tio-lock-outlined nav-icon"></i>
-                                <span
-                                    class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Authentication</span>
-                            </a>
+                    {{-- <li class="navbar-vertical-aside-has-menu ">
+                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
+                            title="Authentication">
+                            <i class="tio-lock-outlined nav-icon"></i>
+                            <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Authentication</span>
+                        </a>
 
-                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Sign In">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Sign In</span>
-                                    </a>
+                        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:;" title="Sign In">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Sign In</span>
+                                </a>
 
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-signin-basic.html"
-                                                title="Basic">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Basic</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-signin-cover.html"
-                                                title="Cover">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Cover</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-signin-basic.html"
+                                            title="Basic">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-signin-cover.html"
+                                            title="Cover">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Cover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Sign Up">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Sign Up</span>
-                                    </a>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:;" title="Sign Up">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Sign Up</span>
+                                </a>
 
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-signup-basic.html"
-                                                title="Basic">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Basic</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-signup-cover.html"
-                                                title="Cover">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Cover</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-signup-basic.html"
+                                            title="Basic">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-signup-cover.html"
+                                            title="Cover">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Cover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Reset Password">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Reset Password</span>
-                                    </a>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:;" title="Reset Password">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Reset Password</span>
+                                </a>
 
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-reset-password-basic.html"
-                                                title="Basic">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Basic</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="authentication-reset-password-cover.html"
-                                                title="Cover">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Cover</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-reset-password-basic.html"
+                                            title="Basic">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="authentication-reset-password-cover.html"
+                                            title="Cover">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Cover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="Email Verification">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Email Verification</span>
-                                    </a>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:;" title="Email Verification">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Email Verification</span>
+                                </a>
 
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                                href="authentication-email-verification-basic.html" title="Basic">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Basic</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                                href="authentication-email-verification-cover.html" title="Cover">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Cover</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                            href="authentication-email-verification-basic.html" title="Basic">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                            href="authentication-email-verification-cover.html" title="Cover">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Cover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="navbar-vertical-aside-has-menu ">
-                                    <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                        href="javascript:;" title="2-step Verification">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">2-step Verification</span>
-                                    </a>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:;" title="2-step Verification">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">2-step Verification</span>
+                                </a>
 
-                                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                                href="authentication-two-step-verification-basic.html" title="Basic">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Basic</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                                href="authentication-two-step-verification-cover.html" title="Cover">
-                                                <span class="tio-circle-outlined nav-indicator-icon"></span>
-                                                <span class="text-truncate">Cover</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                            href="authentication-two-step-verification-basic.html" title="Basic">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                            href="authentication-two-step-verification-cover.html" title="Cover">
+                                            <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                            <span class="text-truncate">Cover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="javascript:;" data-toggle="modal"
-                                        data-target="#welcomeMessageModal" title="Welcome Message">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Welcome Message</span>
-                                    </a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;" data-toggle="modal"
+                                    data-target="#welcomeMessageModal" title="Welcome Message">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Welcome Message</span>
+                                </a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="error-404.html" title="Error 404">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Error 404</span>
-                                    </a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="error-404.html" title="Error 404">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Error 404</span>
+                                </a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="error-500.html" title="Error 500">
-                                        <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">Error 500</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                        <!-- End Authentication -->
+                            <li class="nav-item">
+                                <a class="nav-link " href="error-500.html" title="Error 500">
+                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="text-truncate">Error 500</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> --}}
+                    <!-- End Authentication -->
 
-                        {{-- <li class="nav-item ">
-                            <a class="js-nav-tooltip-link nav-link " href="welcome-page.html" title="Welcome page"
-                                data-placement="left">
-                                <i class="tio-visible-outlined nav-icon"></i>
-                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Welcome
-                                    Page</span>
-                            </a>
-                        </li> --}}
+                    {{-- <li class="nav-item ">
+                        <a class="js-nav-tooltip-link nav-link " href="welcome-page.html" title="Welcome page"
+                            data-placement="left">
+                            <i class="tio-visible-outlined nav-icon"></i>
+                            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Welcome
+                                Page</span>
+                        </a>
+                    </li> --}}
                 </div>
             </div>
     </aside>
@@ -607,7 +589,7 @@
                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Users">
+                                   href="javascript:;" title="Users">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Users</span>
                                 </a>
@@ -637,7 +619,7 @@
 
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="User Profile">
+                                   href="javascript:;" title="User Profile">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">User Profile <span
                                             class="badge badge-primary badge-pill ml-1">5</span></span>
@@ -664,14 +646,14 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="user-profile-connections.html"
-                                            title="Connections">
+                                           title="Connections">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Connections</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="user-profile-my-profile.html"
-                                            title="My Profile">
+                                           title="My Profile">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">My Profile</span>
                                         </a>
@@ -681,7 +663,7 @@
 
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Account">
+                                   href="javascript:;" title="Account">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Account</span>
                                 </a>
@@ -716,7 +698,7 @@
 
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="E-commerce">
+                                   href="javascript:;" title="E-commerce">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">E-commerce</span>
                                 </a>
@@ -731,7 +713,7 @@
 
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Products">
+                                           href="javascript:;" title="Products">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Products</span>
                                         </a>
@@ -739,21 +721,21 @@
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-products.html"
-                                                    title="Products">
+                                                   title="Products">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Products</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-product-details.html"
-                                                    title="Product Details">
+                                                   title="Product Details">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Product Details</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-add-product.html"
-                                                    title="Add Product">
+                                                   title="Add Product">
                                                     <span class="tio-circle-outlined nav-indicator-icon"></span>
                                                     <span class="text-truncate">Add Product</span>
                                                 </a>
@@ -763,7 +745,7 @@
 
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Orders">
+                                           href="javascript:;" title="Orders">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Orders</span>
                                         </a>
@@ -777,7 +759,7 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-order-details.html"
-                                                    title="Order Details">
+                                                   title="Order Details">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Order Details</span>
                                                 </a>
@@ -787,7 +769,7 @@
 
                                     <li class="navbar-vertical-aside-has-menu ">
                                         <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                            href="javascript:;" title="Customers">
+                                           href="javascript:;" title="Customers">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Customers</span>
                                         </a>
@@ -795,21 +777,21 @@
                                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-customers.html"
-                                                    title="Customers">
+                                                   title="Customers">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Customers</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-customer-details.html"
-                                                    title="Customer Details">
+                                                   title="Customer Details">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Customer Details</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " href="ecommerce-add-customers.html"
-                                                    title="Add Customers">
+                                                   title="Add Customers">
                                                     <span class="tio-circle nav-indicator-icon"></span>
                                                     <span class="text-truncate">Add Customers</span>
                                                 </a>
@@ -819,7 +801,7 @@
 
                                     <li class="nav-item">
                                         <a class="nav-link " href="ecommerce-manage-reviews.html"
-                                            title="Manage Reviews">
+                                           title="Manage Reviews">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Manage Reviews</span>
                                         </a>
@@ -835,7 +817,7 @@
 
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Projects">
+                                   href="javascript:;" title="Projects">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Projects</span>
                                 </a>
@@ -858,7 +840,7 @@
 
                             <li class="navbar-vertical-aside-has-menu ">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Project">
+                                   href="javascript:;" title="Project">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Project</span>
                                 </a>
@@ -941,7 +923,7 @@
                     <!-- Authentication -->
                     <li class="navbar-vertical-aside-has-menu nav-item">
                         <a class="js-navbar-vertical-aside-menu-link nav-link " href="javascript:;"
-                            title="Authentication">
+                           title="Authentication">
                             <i class="tio-lock-outlined nav-icon"></i>
                             <span class="nav-compact-title text-truncate">Authentication</span>
                         </a>
@@ -949,7 +931,7 @@
                         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                             <li class="navbar-vertical-aside-has-menu nav-item">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Sign In">
+                                   href="javascript:;" title="Sign In">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Sign In</span>
                                 </a>
@@ -957,14 +939,14 @@
                                 <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-signin-basic.html"
-                                            title="Basic">
+                                           title="Basic">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Basic</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-signin-cover.html"
-                                            title="Cover">
+                                           title="Cover">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Cover</span>
                                         </a>
@@ -974,7 +956,7 @@
 
                             <li class="navbar-vertical-aside-has-menu nav-item">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Sign Up">
+                                   href="javascript:;" title="Sign Up">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Sign Up</span>
                                 </a>
@@ -982,14 +964,14 @@
                                 <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-signup-basic.html"
-                                            title="Basic">
+                                           title="Basic">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Basic</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-signup-cover.html"
-                                            title="Cover">
+                                           title="Cover">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Cover</span>
                                         </a>
@@ -999,7 +981,7 @@
 
                             <li class="navbar-vertical-aside-has-menu nav-item">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Reset Password">
+                                   href="javascript:;" title="Reset Password">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Reset Password</span>
                                 </a>
@@ -1007,14 +989,14 @@
                                 <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-reset-password-basic.html"
-                                            title="Basic">
+                                           title="Basic">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Basic</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-reset-password-cover.html"
-                                            title="Cover">
+                                           title="Cover">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Cover</span>
                                         </a>
@@ -1024,7 +1006,7 @@
 
                             <li class="navbar-vertical-aside-has-menu nav-item">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="Email Verification">
+                                   href="javascript:;" title="Email Verification">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Email Verification</span>
                                 </a>
@@ -1032,14 +1014,14 @@
                                 <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-email-verification-basic.html"
-                                            title="Basic">
+                                           title="Basic">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Basic</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="authentication-email-verification-cover.html"
-                                            title="Cover">
+                                           title="Cover">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Cover</span>
                                         </a>
@@ -1049,7 +1031,7 @@
 
                             <li class="navbar-vertical-aside-has-menu nav-item">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
-                                    href="javascript:;" title="2-step Verification">
+                                   href="javascript:;" title="2-step Verification">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">2-step Verification</span>
                                 </a>
@@ -1057,14 +1039,14 @@
                                 <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
                                     <li class="nav-item">
                                         <a class="nav-link "
-                                            href="authentication-two-step-verification-basic.html" title="Basic">
+                                           href="authentication-two-step-verification-basic.html" title="Basic">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Basic</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link "
-                                            href="authentication-two-step-verification-cover.html" title="Cover">
+                                           href="authentication-two-step-verification-cover.html" title="Cover">
                                             <span class="tio-circle-outlined nav-indicator-icon"></span>
                                             <span class="text-truncate">Cover</span>
                                         </a>
@@ -1074,7 +1056,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:;" data-toggle="modal"
-                                    data-target="#welcomeMessageModal" title="Welcome Message">
+                                   data-target="#welcomeMessageModal" title="Welcome Message">
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate">Welcome Message</span>
                                 </a>

@@ -200,7 +200,7 @@ class UserController extends Controller
             $request->session()->put('img', $user->img);
             $request->session()->put('role', $user->role);
 
-            return view('dashboard.index');
+            return redirect('admin');
         }
         return back()->with('msg', 'username or password wrong');
     }

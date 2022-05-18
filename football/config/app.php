@@ -35,7 +35,8 @@ return [
         ],
         'role' =>[
             '1' => 'Admin',
-            '2' => 'Vendor'
+            '2' => 'Vendor',
+            '3' => 'Customer'
         ],
         'size' => [
             '1' => "Sân 5",

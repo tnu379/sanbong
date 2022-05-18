@@ -20,11 +20,15 @@ class Users extends Model
         'street',
         'role',
         'img',
-        'status'
+        'status',
+        'coin'
     ];
     protected $table  = 'users';
     public $timestamps = true;
     public function yards(){
         return $this->hasMany(Yard::class);
+    }
+    public function payments(){
+        return $this->hasMany(Payment::class,'user_id','id');
     }
 }

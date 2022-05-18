@@ -56,10 +56,25 @@ class OrdersController extends Controller
         return response()->json($data);
     }
 
+    public function vendorBooking(Request $request)
+    {
+        $user = Users::where('id', Auth::id())->first();
+        $times = Config::get('app.app-football.time');
+        $sizes = Config::get('app.app-football.size');
+        $prices = Config::get('app.app-football.price');
+        return view('orders.vendor_booking',
+            [
+                'user' => $user,
+                'sizes' => $sizes,
+                'prices' => $prices,
+                'times' => $times
+            ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -74,15 +89,16 @@ class OrdersController extends Controller
             'amount' => Config::get('app.app-football.price')[$hour] ?? 90000,
             'status' => 0,
             'start' => $request->start,
-            'end'  => $request->end,
+            'end' => $request->end,
         ];
         $data = Orders::create($orderData);
+        return route('payment_create', ['orderId' => $data->id]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,7 +109,7 @@ class OrdersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +120,8 @@ class OrdersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -116,7 +132,7 @@ class OrdersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

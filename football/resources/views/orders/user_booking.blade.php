@@ -112,7 +112,6 @@
                             </td>
                             <td>{{ $district[$user->district] }}<span class="text-hide">Code: GB</span></td>
                             <td>Vendor</td>
-                            <td><a class="btn btn-primary" href="{{ route('orders_booking', $user->id) }}">View</a></td>
                         </tr>
                         <tr class="aser bg-soft-dark" style="display: none">
                             <td colspan="1"></td>

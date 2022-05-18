@@ -62,8 +62,8 @@
                                         <div class="input-group input-group-sm-down-break">
                                             <?php
                                             $a = explode(' ', $user->full_name);
-                                            $firstName = $a[0];
-                                            $lastName = $a[1];
+                                            $firstName = $a[0] ?? '';
+                                            $lastName = $a[1] ?? '';
                                             ?>
                                             <input type="text" class="form-control" name="firstName" id="firstNameLabel"
                                                 value="{{ $firstName }}" placeholder="Clarice" aria-label="Clarice">

@@ -43,7 +43,8 @@
                                 start: start,
                                 end: end
                             },
-                            success: function() {
+                            success: function(response) {
+                                window.location.replace(response);
                                 calendar.fullCalendar('refetchEvents');
                                 alert("Added Successfully");
                             }

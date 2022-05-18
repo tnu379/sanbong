@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2022 at 04:13 AM
+-- Generation Time: May 18, 2022 at 03:02 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -20,56 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `football`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `day`
---
-
-CREATE TABLE `day` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `number` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `day`
---
-
-INSERT INTO `day` (`id`, `number`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, NULL),
-(2, 2, NULL, NULL),
-(3, 3, NULL, NULL),
-(4, 4, NULL, NULL),
-(5, 5, NULL, NULL),
-(6, 6, NULL, NULL),
-(7, 7, NULL, NULL),
-(8, 8, NULL, NULL),
-(9, 9, NULL, NULL),
-(10, 10, NULL, NULL),
-(11, 11, NULL, NULL),
-(12, 12, NULL, NULL),
-(13, 13, NULL, NULL),
-(14, 14, NULL, NULL),
-(15, 15, NULL, NULL),
-(16, 16, NULL, NULL),
-(17, 17, NULL, NULL),
-(18, 18, NULL, NULL),
-(19, 19, NULL, NULL),
-(20, 20, NULL, NULL),
-(21, 21, NULL, NULL),
-(22, 22, NULL, NULL),
-(23, 23, NULL, NULL),
-(24, 24, NULL, NULL),
-(25, 25, NULL, NULL),
-(26, 26, NULL, NULL),
-(27, 27, NULL, NULL),
-(28, 28, NULL, NULL),
-(29, 29, NULL, NULL),
-(30, 30, NULL, NULL),
-(31, 31, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -190,8 +140,15 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `yard_id`, `user_id`, `customer_id`, `amount`, `status`, `start`, `end`, `created_at`, `updated_at`, `title`) VALUES
-(3, 1, 2, 1, 90000, 0, '2022-04-26 18:00:00', '2022-04-26 19:00:00', '2022-04-24 08:01:02', '2022-04-24 08:01:02', ''),
-(4, 1, 2, 2, 90000, 0, '2022-04-26 06:00:00', '2022-04-26 07:00:00', '2022-04-25 07:55:23', '2022-04-25 07:55:23', '123123');
+(9, 1, 2, 5, 90000, 0, '2022-05-06 06:00:00', '2022-05-06 07:00:00', '2022-05-05 06:09:50', '2022-05-05 06:09:50', '123123'),
+(10, 1, 2, 5, 90000, 0, '2022-05-06 07:00:00', '2022-05-06 08:00:00', '2022-05-05 06:19:45', '2022-05-05 06:19:45', 'Úy'),
+(11, 1, 2, 5, 90000, 0, '2022-05-06 08:00:00', '2022-05-06 09:00:00', '2022-05-05 06:22:35', '2022-05-05 06:22:35', 'Long'),
+(12, 1, 2, 5, 90000, 0, '2022-05-06 09:00:00', '2022-05-06 10:00:00', '2022-05-05 06:24:31', '2022-05-05 06:24:31', 'Hiếu'),
+(13, 3, 2, 5, 90000, 0, '2022-05-06 06:00:00', '2022-05-06 07:00:00', '2022-05-05 06:25:18', '2022-05-05 06:25:18', 'THành'),
+(14, 3, 2, 5, 90000, 0, '2022-05-06 07:00:00', '2022-05-06 08:00:00', '2022-05-05 06:26:23', '2022-05-05 06:26:23', 'Kim Anh'),
+(15, 3, 2, 5, 90000, 0, '2022-05-06 08:00:00', '2022-05-06 09:00:00', '2022-05-05 06:30:11', '2022-05-05 06:30:11', 'Khoa'),
+(16, 8, 2, 5, 90000, 0, '2022-05-06 06:00:00', '2022-05-06 07:00:00', '2022-05-05 06:31:52', '2022-05-05 06:31:52', 'THạch sanh'),
+(17, 1, 2, 2, 90000, 0, '2022-05-09 06:00:00', '2022-05-09 07:00:00', '2022-05-07 23:42:06', '2022-05-07 23:42:06', 'Luan');
 
 -- --------------------------------------------------------
 
@@ -204,6 +161,53 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `user_id`, `order_id`, `customer_id`, `amount`, `status`, `title`, `created_at`, `updated_at`) VALUES
+(1, 2, 12, 5, 90000, 1, 'Hiếu', '2022-05-08 06:37:10', '2022-05-08 06:37:10'),
+(2, 2, 12, 5, 90000, 1, 'Hiếu', '2022-05-08 06:36:55', '2022-05-08 06:36:55'),
+(3, 2, 13, 5, 90000, 1, 'THành', '2022-05-08 06:35:58', '2022-05-08 06:35:58'),
+(4, 2, 13, 5, 90000, 1, 'THành', '2022-05-08 06:36:00', '2022-05-08 06:36:00'),
+(5, 2, 13, 5, 90000, 1, 'THành', '2022-05-08 06:37:12', '2022-05-08 06:37:12'),
+(6, 2, 14, 5, 90000, 1, 'Kim Anh', '2022-05-08 06:37:16', '2022-05-08 06:37:16'),
+(7, 2, 14, 5, 90000, 1, 'Kim Anh', '2022-05-08 06:37:14', '2022-05-08 06:37:14'),
+(8, 2, 14, 5, 90000, 0, 'Kim Anh', '2022-05-05 06:29:58', '2022-05-05 13:29:58'),
+(9, 2, 14, 5, 90000, 0, 'Kim Anh', '2022-05-05 06:29:59', '2022-05-05 13:29:59'),
+(10, 2, 14, 5, 90000, 0, 'Kim Anh', '2022-05-05 06:30:00', '2022-05-05 13:30:00'),
+(11, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:30:11', '2022-05-05 13:30:11'),
+(12, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:30:35', '2022-05-05 13:30:35'),
+(13, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:30:35', '2022-05-05 13:30:35'),
+(14, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:30:52', '2022-05-05 13:30:52'),
+(15, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:30:54', '2022-05-05 13:30:54'),
+(16, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:31:15', '2022-05-05 13:31:15'),
+(17, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:31:16', '2022-05-05 13:31:16'),
+(18, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:31:19', '2022-05-05 13:31:19'),
+(19, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:31:20', '2022-05-05 13:31:20'),
+(20, 2, 15, 5, 90000, 0, 'Khoa', '2022-05-05 06:31:20', '2022-05-05 13:31:20'),
+(21, 2, 16, 5, 90000, 0, 'THạch sanh', '2022-05-05 06:31:52', '2022-05-05 13:31:52'),
+(22, 2, 16, 5, 90000, 0, 'THạch sanh', '2022-05-05 07:21:57', '2022-05-05 14:21:57'),
+(23, 2, 17, 2, 90000, 0, 'Luan', '2022-05-07 23:42:26', '2022-05-08 06:42:26');
 
 -- --------------------------------------------------------
 
@@ -293,6 +297,7 @@ CREATE TABLE `users` (
   `street` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 2,
+  `coin` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -302,10 +307,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `full_name`, `img`, `email`, `email_verified_at`, `password`, `address`, `phone`, `district`, `ward`, `street`, `role`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'uytran99', 'mlem', '/storage/uploads/avatar//1650205057.jpg', 'uytran99@gmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', NULL, NULL, 3, NULL, NULL, 1, 2, NULL, NULL, NULL),
-(2, 'ngocuy919nt', 'tran ngoc', '/storage/uploads/avatar//1650205057.jpg', 'ngocuy919nt@gmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', '1127', '0393717381', 1, '10', 'Đoàn Văn Bơ', 2, 1, NULL, '2022-04-17 07:17:37', '2022-04-22 08:47:30'),
-(5, 'tnu02', ' uy tran', '/storage/uploads/avatar//1650205057.jpg', 'tnu02@yopmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', NULL, '0393717380', 1, NULL, NULL, 3, 1, NULL, '2022-04-24 09:03:59', '2022-04-24 09:03:59');
+INSERT INTO `users` (`id`, `user_name`, `full_name`, `img`, `email`, `email_verified_at`, `password`, `address`, `phone`, `district`, `ward`, `street`, `role`, `status`, `coin`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'uytran99', 'mlem', '/storage/uploads/avatar//1650205057.jpg', 'uytran99@gmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', NULL, NULL, 3, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(2, 'ngocuy919nt', 'tran ngoc', '/storage/uploads/avatar//1650205057.jpg', 'ngocuy919nt@gmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', '1127', '0393717381', 1, '10', 'Đoàn Văn Bơ', 2, 1, 360000, NULL, '2022-04-17 07:17:37', '2022-05-07 23:37:16'),
+(5, 'tnu02', ' uy tran', '/storage/uploads/avatar//1650205057.jpg', 'tnu02@yopmail.com', NULL, '$2y$10$Ava.Z/RfSjqZezhUq1LqTO3DGlst9Xi5MYLkub31rzrvJIjUIBJEu', NULL, '0393717380', 1, NULL, NULL, 3, 1, NULL, NULL, '2022-04-24 09:03:59', '2022-04-24 09:03:59');
 
 -- --------------------------------------------------------
 
@@ -363,12 +368,6 @@ INSERT INTO `yard_times` (`id`, `yard_id`, `time_id`, `month_id`, `created_at`, 
 --
 
 --
--- Indexes for table `day`
---
-ALTER TABLE `day`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -404,6 +403,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `personal_access_tokens`
@@ -450,12 +455,6 @@ ALTER TABLE `yard_times`
 --
 
 --
--- AUTO_INCREMENT for table `day`
---
-ALTER TABLE `day`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
@@ -483,7 +482,13 @@ ALTER TABLE `month`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
