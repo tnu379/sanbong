@@ -104,9 +104,11 @@
 
                 <!-- Footer -->
                 <div class="d-flex justify-content-end d-print-none">
-                    <a class="btn btn-white mr-2" href="">
-                        <i class="tio-download-to mr-1"></i> Thanh Toán Onl
-                    </a>
+                    <form action="{{route('vn_payment')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="order-id" value="{{$order->id}}">
+                        <button type="submit" class="btn btn-default" name="redirect">Thanh Toán VNPay</button>
+                    </form>
 
                     <a class="btn btn-primary" href="{{route('payment_store',$order->id)}}">
                         <i class="tio-print mr-1"></i> Trả tại quầy

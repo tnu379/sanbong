@@ -17,7 +17,8 @@ class Payment extends Model
         'status',
         'title',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'type'
     ];
     protected $table  = 'payments';
     public $timestamps = true;

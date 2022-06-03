@@ -29,7 +29,6 @@ Route::get('/logout', function () {
     session()->forget('user_email');
     session()->forget('img');
     session()->forget('role');
-    session()->flush();
     return view('auth.login');
 })->name('logout');
 Route::post('/post-login', [UserController::class, 'login'])->name('post-login');
@@ -127,5 +126,7 @@ Route::middleware(['auth'])->group(function () {
         Route::match(['get', 'post'], '/update/id', [OrdersController::class, 'update'])->name('orders_update');
     });
     Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
+    Route::post('vn_payment',[\App\Http\Controllers\PaymentController::class,'vn_payment'])->name('vn_payment');
+    Route::post('update-status',[\App\Http\Controllers\PaymentController::class,'updateStatus'])->name('update-status');
 });
 Route::get('get-events/{id}', [OrdersController::class, 'getEvents'])->name('get-events');

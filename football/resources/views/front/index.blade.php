@@ -77,7 +77,7 @@
                 <div class="col-lg-3">
                     <div class="logo">
                         <a href="./index.html">
-                            <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                            <img src="{{ asset('assets/img/logo.png') }}"  alt="">
                         </a>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
     <!-- ChoseUs Section End -->
 
     <!-- Banner Section Begin -->
-    <section class="banner-section set-bg" data-setbg="assets/img/banner-bg.jpg">
+    <section class="banner-section set-bg" data-setbg="assets/img/hero/hero-2.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

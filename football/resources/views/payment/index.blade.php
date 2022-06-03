@@ -137,11 +137,19 @@
 
                             </td>
                             <td>
-                                <div class="d-flex align-items-center">
-                                    <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                         src="assets\svg\brands\mastercard.svg" alt="Image Description">
-                                    <span class="text-dark">Tại quầy</span>
-                                </div>
+                               @if($payment->type == 2)
+                                    <div class="d-flex align-items-center">
+                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
+                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
+                                        <span class="text-dark">VN Pay</span>
+                                    </div>
+                                @else
+                                    <div class="d-flex align-items-center">
+                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
+                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
+                                        <span class="text-dark">Tại Quầy</span>
+                                    </div>
+                                @endif
                             </td>
                             <td>{{formatDollars($payment->amount)}}</td>
                             <td>
