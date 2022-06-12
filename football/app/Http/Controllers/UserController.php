@@ -200,7 +200,11 @@ class UserController extends Controller
             $request->session()->put('img', $user->img);
             $request->session()->put('role', $user->role);
 
+           if($user->role == 2){
             return redirect('admin');
+           }
+           return redirect('payments');
+
         }
         return back()->with('msg', 'username or password wrong');
     }

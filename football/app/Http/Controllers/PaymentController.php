@@ -8,7 +8,7 @@ use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-
+use PDF;
 class PaymentController extends Controller
 {
     /**
@@ -216,5 +216,27 @@ class PaymentController extends Controller
 
     public function updateStatus(){
 
+    }
+
+    public function pdf_payment($id){
+
+        $order = Orders::find($id);
+        $data = [
+            'order' => $order
+        ];
+        $pdf = PDF::loadView('myPDF', $data);
+
+        return $pdf->download('billing.pdf');
+    }
+
+    public function mailForAdmin(Request $request){
+        $details = [
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'content' => $request['content'],
+            'name' => $request['name']
+        ];
+
+        \Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\MyTestMail($details));
     }
 }

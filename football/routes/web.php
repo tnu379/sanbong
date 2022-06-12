@@ -4,12 +4,13 @@ use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\YardController;
+use App\Models\Orders;
 use App\Models\User;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
-
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,11 +59,23 @@ Route::get('booking/{id}', function ($id) {
 Route::post('/register/store', [UserController::class, 'registerStore'])->name('register_store');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', function () {
+        for ($i = 1; $i < 13; $i++) {
+            $intakes[$i] = Orders::whereMonth('created_at', $i)->get();
+        }
+
+        foreach ($intakes as $key => $orders) {
+            $sub = 0;
+            foreach ($orders as $order) {
+                $sub = $sub + $order->amount;
+            }
+            $dataChart[$key] = $sub;
+        }
         $user = Users::find(\Illuminate\Support\Facades\Auth::id());
         $paymentPaid = \App\Models\Payment::query()->where('user_id', \Illuminate\Support\Facades\Auth::id())->where('status', 1)->get()->count();
         $paymentPending = \App\Models\Payment::query()->where('user_id', \Illuminate\Support\Facades\Auth::id())->where('status', 0)->get()->count();
         $customers = Users::query()->where('role', 3)->get();
         return view('dashboard.index', [
+            'dataChart' => $dataChart,
             'user' => $user,
             'paymentPaid' => $paymentPaid,
             'paymentPending' => $paymentPending,
@@ -126,7 +139,9 @@ Route::middleware(['auth'])->group(function () {
         Route::match(['get', 'post'], '/update/id', [OrdersController::class, 'update'])->name('orders_update');
     });
     Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
-    Route::post('vn_payment',[\App\Http\Controllers\PaymentController::class,'vn_payment'])->name('vn_payment');
-    Route::post('update-status',[\App\Http\Controllers\PaymentController::class,'updateStatus'])->name('update-status');
+    Route::post('vn_payment', [\App\Http\Controllers\PaymentController::class, 'vn_payment'])->name('vn_payment');
+    Route::get('pdf_payment/{id}', [\App\Http\Controllers\PaymentController::class, 'pdf_payment'])->name('pdf_payment');
+    Route::post('update-status', [\App\Http\Controllers\PaymentController::class, 'updateStatus'])->name('update-status');
 });
 Route::get('get-events/{id}', [OrdersController::class, 'getEvents'])->name('get-events');
+Route::post('mail-for-admin', [\App\Http\Controllers\PaymentController::class, 'mailForAdmin'])->name('mail-for-admin');

@@ -17,6 +17,10 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <!-- Card -->
+                <a class="btn btn-primary" href="{{route('pdf_payment',$order->id)}}">
+                    <i class="tio-print mr-1"></i> Pdf
+                </a>
+
                 <div class="card card-lg mb-5">
                     <div class="card-body">
                         <div class="row justify-content-lg-between">
