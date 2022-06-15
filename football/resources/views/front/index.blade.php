@@ -41,22 +41,11 @@
         </div>
         <nav class="canvas-menu mobile-menu">
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ route('about-us') }}">About Us</a></li>
                 <li><a href="./classes.html">Classes</a></li>
                 <li><a href="./services.html">Services</a></li>
                 <li><a href="./team.html">Our Team</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./class-timetable.html">Classes timetable</a></li>
-                        <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                        <li><a href="./team.html">Our team</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./blog.html">Our blog</a></li>
-                        <li><a href="./404.html">404</a></li>
-                    </ul>
-                </li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -84,21 +73,13 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="#">Home</a></li>
                             {{-- <li><a href="#about-us">About Us</a></li> --}}
-                            <li><a href="./class-details.html">Classes</a></li>
+                            <li><a href="{{ route('about-us') }}">About Us</a></li>
+
                             <li><a href="#about-us">Services</a></li>
                             <li><a href="#order">Order</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
-                                    <li><a href="./class-timetable.html">Classes timetable</a></li>
-                                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                                    <li><a href="./team.html">Order</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
-                                    <li><a href="./blog.html">Our blog</a></li>
-                                    <li><a href="./404.html">404</a></li>
-                                </ul>
+                            <li><a href='{{ route('blogs') }}'>Blog</a>
                             </li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
@@ -160,7 +141,7 @@
     <!-- Hero Section End -->
 
     <!-- ChoseUs Section Begin -->
-    <section class="choseus-section spad" id="about-us">
+    {{-- <section class="choseus-section spad" id="about-us">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -205,7 +186,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ChoseUs Section End -->
 
     <!-- Classes Section Begin -->
@@ -355,18 +336,17 @@
                     <div class="contact-widget">
                         <div class="cw-text">
                             <i class="fa fa-map-marker"></i>
-                            <p>333 Middle Winchendon Rd, Rindge,<br /> NH 03461</p>
+                            <p>475A Điện Biên Phủ, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh</p>
                         </div>
                         <div class="cw-text">
                             <i class="fa fa-mobile"></i>
                             <ul>
-                                <li>125-711-811</li>
-                                <li>125-668-886</li>
+                                <li>089999999</li>
                             </ul>
                         </div>
                         <div class="cw-text email">
                             <i class="fa fa-envelope"></i>
-                            <p>Support.gymcenter@gmail.com</p>
+                            <p>nguyenthanhcong02101999@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -569,22 +549,21 @@
                 <div class="col-md-4">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p>333 Middle Winchendon Rd, Rindge,<br /> NH 03461</p>
+                        <p>475A Điện Biên Phủ, Phường 25,<br> Bình Thạnh, Thành phố Hồ Chí Minh<br /></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="gt-text">
                         <i class="fa fa-mobile"></i>
                         <ul>
-                            <li>125-711-811</li>
-                            <li>125-668-886</li>
+                            <li>089999999</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="gt-text email">
                         <i class="fa fa-envelope"></i>
-                        <p>Support.gymcenter@gmail.com</p>
+                        <p>nguyenthanhcong02101999@gmail.com</p>
                     </div>
                 </div>
             </div>

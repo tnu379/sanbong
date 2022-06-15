@@ -38,14 +38,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <!--header-->
     <div class="header-w3l">
-        <h1>Glassy Login Form</h1>
+        <h1>Đăng Nhập</h1>
     </div>
     <!--//header-->
     <!--main-->
     <div class="main-w3layouts-agileinfo">
         <!--form-stars-here-->
         <div class="wthree-form">
-            <h2>Fill out the form below to login</h2>
             @if (session('msg'))
                 <div class="alert alert-danger" role="alert">
                     <h2>{{ session('msg') }}</h2>

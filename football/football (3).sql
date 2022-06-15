@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 02:30 PM
+-- Generation Time: Jun 15, 2022 at 02:33 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `football`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL,
+  `content` text DEFAULT NULL,
+  `title` text DEFAULT NULL,
+  `img` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `content`, `title`, `img`, `created_at`, `updated_at`) VALUES
+(1, 'mlem', 'mlem', 'Mlem.jpg', '2022-06-13 16:56:37', '2022-06-14 08:10:34');
 
 -- --------------------------------------------------------
 
@@ -153,7 +175,10 @@ INSERT INTO `orders` (`id`, `yard_id`, `user_id`, `customer_id`, `amount`, `stat
 (19, 1, 2, 5, 90000, 0, '2022-05-29 07:00:00', '2022-05-29 08:00:00', '2022-05-27 23:16:44', '2022-05-27 23:16:44', 'Phương'),
 (20, 1, 2, 5, 90000, 0, '2022-05-29 08:00:00', '2022-05-29 09:00:00', '2022-05-28 01:19:24', '2022-05-28 01:19:24', 'THọ'),
 (21, 1, 2, 5, 90000, 0, '2022-05-30 06:00:00', '2022-05-30 07:00:00', '2022-05-28 01:42:20', '2022-05-28 01:42:20', 'Úy'),
-(22, 3, 2, 5, 90000, 0, '2022-05-29 06:00:00', '2022-05-29 07:00:00', '2022-05-28 01:43:50', '2022-05-28 01:43:50', 'Công');
+(22, 3, 2, 5, 90000, 0, '2022-05-29 06:00:00', '2022-05-29 07:00:00', '2022-05-28 01:43:50', '2022-05-28 01:43:50', 'Công'),
+(24, 1, 2, 5, 90000, 0, '2022-06-12 06:00:00', '2022-06-12 07:00:00', '2022-06-11 08:48:46', '2022-06-11 08:48:46', '1sasd'),
+(25, 1, 2, 5, 90000, 0, '2022-06-13 06:00:00', '2022-06-13 07:00:00', '2022-06-11 09:00:27', '2022-06-11 09:00:27', 'MInh'),
+(26, 1, 2, 5, 90000, 0, '2022-06-14 06:00:00', '2022-06-14 07:00:00', '2022-06-11 09:45:35', '2022-06-11 09:45:35', 'uy');
 
 -- --------------------------------------------------------
 
@@ -218,7 +243,8 @@ INSERT INTO `payments` (`id`, `user_id`, `order_id`, `customer_id`, `amount`, `s
 (25, 2, 20, 5, 90000, 1, 'THọ', '2022-05-28 01:37:59', '2022-05-28 08:37:59', 0),
 (26, 2, 20, 5, 90000, 1, 'THọ', '2022-05-28 01:40:03', '2022-05-28 08:40:03', 0),
 (27, 2, 21, 5, 90000, 1, 'Úy', '2022-05-28 01:42:23', '2022-05-28 08:42:23', 0),
-(28, 2, 22, 5, 90000, 1, 'Công', '2022-05-28 01:43:52', '2022-05-28 08:43:52', 0);
+(28, 2, 22, 5, 90000, 1, 'Công', '2022-05-28 01:43:52', '2022-05-28 08:43:52', 0),
+(29, 2, 25, 5, 90000, 1, 'MInh', '2022-06-11 09:09:37', '2022-06-11 16:09:37', 2);
 
 -- --------------------------------------------------------
 
@@ -379,6 +405,12 @@ INSERT INTO `yard_times` (`id`, `yard_id`, `time_id`, `month_id`, `created_at`, 
 --
 
 --
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -466,6 +498,12 @@ ALTER TABLE `yard_times`
 --
 
 --
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
@@ -493,13 +531,13 @@ ALTER TABLE `month`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

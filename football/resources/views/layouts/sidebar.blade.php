@@ -60,6 +60,32 @@
                                                 </a>
                                             </li>
                                         </ul>
+                                        <li class="navbar-vertical-aside-has-menu ">
+                                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                                href="javascript:;" title="Projects">
+                                                <span class="tio-circle nav-indicator-icon"></span>
+                                                <span class="text-truncate">Blog</span>
+                                            </a>
+
+                                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                                <li class="nav-item">
+                                                    <a class="nav-link " href="{{ route('blog') }}"
+                                                        title="Overview">
+                                                        <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                        <span class="text-truncate">Blog</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                                <li class="nav-item">
+                                                    <a class="nav-link " href="{{ route('add_blog') }}"
+                                                        title="Overview">
+                                                        <span class="tio-circle-outlined nav-indicator-icon"></span>
+                                                        <span class="text-truncate">Add Blog</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </li>
 
                                 @elseif(session('role') == 2)

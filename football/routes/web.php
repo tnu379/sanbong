@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\YardController;
 use App\Models\Orders;
 use App\Models\User;
+use App\Models\Blog;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -25,6 +26,17 @@ use Carbon\Carbon;
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+Route::get('/about-us', function () {
+    return view('blog-details');
+})->name('about-us');
+Route::get('/blogs', function () {
+    $blogs = Blog::get();
+    return view('blog.index')->with(['blogs' => $blogs]);
+})->name('blogs');
+Route::get('/post/{id}', function ($id) {
+    $blog = Blog::find($id);
+    return view('blog.post')->with(['blog' => $blog]);
+})->name('post');
 Route::get('/logout', function () {
     session()->forget('user_name');
     session()->forget('user_email');
@@ -137,6 +149,41 @@ Route::middleware(['auth'])->group(function () {
 
         Route::match(['get', 'post'], '/store', [OrdersController::class, 'store'])->name('orders_store');
         Route::match(['get', 'post'], '/update/id', [OrdersController::class, 'update'])->name('orders_update');
+    });
+    Route::prefix('blog')->group(function () {
+        Route::get('/', function(){
+            $blogs = Blog::get();
+            return view('blog.blog-dashboard')->with(['blogs' => $blogs]);
+        })->name('blog');
+        Route::get('/add-blog', function(){
+            return view('blog.add-blog');
+        })->name('add_blog');
+        Route::post('/store', function(Request $request){
+            $data = [
+                'title' => $request['title'],
+                'content' => $request['content']
+            ];
+            $blog = Blog::create($data);
+            return redirect('/blog');
+        })->name('store');
+
+        Route::get('/update/{id}', function($id){
+            $blog = Blog::find($id);
+            return view('blog.update-blog')->with(['blog'=>$blog]);
+        })->name('update');
+
+        Route::post('/save-update/{id}', function($id, Request $request){
+            $blog = Blog::find($id);
+            $blog->title = $request['title'];
+            $blog->content = $request['content'];
+            $blog->save();
+            return redirect('/blog');
+        })->name('save-update');
+        Route::get('delete/{id}', function($id){
+            $blog = Blog::find($id);
+            $blog->delete();
+            return back();
+        })->name('blog-delete');
     });
     Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
     Route::post('vn_payment', [\App\Http\Controllers\PaymentController::class, 'vn_payment'])->name('vn_payment');
