@@ -33,6 +33,9 @@ Route::get('/blogs', function () {
     $blogs = Blog::get();
     return view('blog.index')->with(['blogs' => $blogs]);
 })->name('blogs');
+Route::get('/contact', function () {
+    return view('front.contact');
+})->name('contact');
 Route::get('/post/{id}', function ($id) {
     $blog = Blog::find($id);
     return view('blog.post')->with(['blog' => $blog]);
@@ -151,14 +154,14 @@ Route::middleware(['auth'])->group(function () {
         Route::match(['get', 'post'], '/update/id', [OrdersController::class, 'update'])->name('orders_update');
     });
     Route::prefix('blog')->group(function () {
-        Route::get('/', function(){
+        Route::get('/', function () {
             $blogs = Blog::get();
             return view('blog.blog-dashboard')->with(['blogs' => $blogs]);
         })->name('blog');
-        Route::get('/add-blog', function(){
+        Route::get('/add-blog', function () {
             return view('blog.add-blog');
         })->name('add_blog');
-        Route::post('/store', function(Request $request){
+        Route::post('/store', function (Request $request) {
             $data = [
                 'title' => $request['title'],
                 'content' => $request['content']
@@ -167,19 +170,19 @@ Route::middleware(['auth'])->group(function () {
             return redirect('/blog');
         })->name('store');
 
-        Route::get('/update/{id}', function($id){
+        Route::get('/update/{id}', function ($id) {
             $blog = Blog::find($id);
-            return view('blog.update-blog')->with(['blog'=>$blog]);
+            return view('blog.update-blog')->with(['blog' => $blog]);
         })->name('update');
 
-        Route::post('/save-update/{id}', function($id, Request $request){
+        Route::post('/save-update/{id}', function ($id, Request $request) {
             $blog = Blog::find($id);
             $blog->title = $request['title'];
             $blog->content = $request['content'];
             $blog->save();
             return redirect('/blog');
         })->name('save-update');
-        Route::get('delete/{id}', function($id){
+        Route::get('delete/{id}', function ($id) {
             $blog = Blog::find($id);
             $blog->delete();
             return back();

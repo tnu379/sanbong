@@ -3,14 +3,14 @@
         class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
         <div class="navbar-vertical-container">
             <div class="navbar-vertical-footer-offset">
-                <div class="navbar-brand-wrapper justify-content-between">
+                <div style="height: 150px;" class="navbar-brand-wrapper justify-content-between">
                     <!-- Logo -->
 
 
                     <a class="navbar-brand" href="index.html" aria-label="Front">
-                        <img class="navbar-brand-logo" src="{{ asset('assets\svg\logos\logo.svg') }}" alt="Logo">
-                        <img class="navbar-brand-logo-mini" src="{{ asset('assets\svg\logos\logo-short.svg') }}"
-                             alt="Logo">
+                        <img style="    width: 114px;
+                        border-radius: 50%;
+                        height: 120px;object-fit: cover" class="navbar-brand-logo" src="{{asset('assets/img/logo.png')}}"alt="Logo">
                     </a>
 
                     <!-- End Logo -->
@@ -596,7 +596,9 @@
 
 
                 <a class="navbar-brand" href="index.html" aria-label="Front">
-                    <img class="navbar-brand-logo-short" src="assets\svg\logos\logo-short.svg" alt="Logo">
+                    <img style="    width: 114px;
+                        border-radius: 50%;
+                        height: 120px;object-fit: cover" class="navbar-brand-logo" src="{{asset('assets/img/logo.png')}}"alt="Logo">
                 </a>
 
                 <!-- End Logo -->

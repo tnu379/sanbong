@@ -121,7 +121,7 @@
                                 </td>
                                 <td>{{date($order->schedule_date)}}</td>
                                 <td>
-                                    <a class="text-body" href="ecommerce-customer-details.html">Jase Marley</a>
+                                    <a class="text-body" href="ecommerce-customer-details.html">{{$order->title}}</a>
                                 </td>
                                 <td>
                                     <span class="badge badge-soft-success">
