@@ -511,7 +511,7 @@
                                     </div>
                                 </td>
                                 <td class="table-column-pl-0">
-                                    <a class="media align-items-center" href="user-profile.html">
+                                    <a class="media align-items-center" href="{{ route('user_edit', $customer->id) }}">
                                         <div class="avatar avatar-sm avatar-circle mr-2">
                                             <img class="avatar-img" src="{{ asset($customer->img) }}"
                                                 alt="Image Description">

@@ -99,9 +99,7 @@
                             <th class="table-column-pl-0">Order</th>
                             <th>Date</th>
                             <th>Customer</th>
-                            <th>Payment status</th>
                             <th>Status</th>
-                            <th>Payment</th>
                             <th>Total</th>
                         </tr>
                     </thead>
@@ -123,11 +121,6 @@
                                     <a class="text-body" href="ecommerce-customer-details.html">{{$order->title}}</a>
                                 </td>
                                 <td>
-                                    <span class="badge badge-soft-success">
-                                        <span class="legend-indicator bg-success"></span>Paid
-                                    </span>
-                                </td>
-                                <td>
                                     @if ($order->status == 1)
                                     <span class="badge badge-soft-info">
                                         <span class="legend-indicator bg-success"></span>
@@ -141,13 +134,7 @@
                                     @endif
 
                                 </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="assets\svg\brands\mastercard.svg" alt="Image Description">
-                                        <span class="text-dark">&bull;&bull;&bull;&bull; 4242</span>
-                                    </div>
-                                </td>
+
                                 <td>{{formatDollars($order->amount)}}</td>
                             </tr>
                         @endforeach
