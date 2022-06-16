@@ -95,13 +95,7 @@
                         <!-- End Row -->
 
                         <!-- Contacts -->
-                        <div class="mb-3">
-                            <h3>Thank you!</h3>
-                            <p>If you have any questions concerning this invoice, use the following contact information:</p>
-                        </div>
-                        <!-- End Contacts -->
 
-                        <p class="font-size-sm mb-0">&copy; 2020 Htmlstream.</p>
                     </div>
                 </div>
                 <!-- End Card -->

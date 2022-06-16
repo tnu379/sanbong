@@ -12,8 +12,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords"
-        content="Glassy Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
@@ -37,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <!--header-->
     <div class="header-w3l">
-        <h1>Glassy Register Form</h1>
+        <h1>Register</h1>
     </div>
     <!--//header-->
     <!--main-->
