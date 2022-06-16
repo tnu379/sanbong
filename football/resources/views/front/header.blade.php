@@ -65,22 +65,20 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="{{route('front')}}}">
-                            <img style="    width: 114px;
+                        <a href="{{ route('front') }}">
+                            <img style=" width: 114px;
                             border-radius: 50%;
-                            height: 120px;object-fit: cover" src="{{ asset('assets/img/logo.png') }}" alt="">
+                            height: 120px;object-fit: cover"
+                                src="{{ asset('assets/img/logo.png') }}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="{{ route('front') }}">Home</a></li>
                             {{-- <li><a href="#about-us">About Us</a></li> --}}
                             <li><a href="{{ route('about-us') }}">About Us</a></li>
-
-                            <li><a href="#about-us">Services</a></li>
-                            <li><a href="#order">Order</a></li>
                             <li><a href='{{ route('blogs') }}'>Blog</a>
                             </li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
@@ -121,7 +119,9 @@
                         <div class="fa-logo">
                             <a href="#"><img style="height:150px" src="assets/img/logo.png" alt=""></a>
                         </div>
-                        <p>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi quận đều có sân chơi 5vs5 ,7vs7 cho anh em .Hãy đặt sân ngay bây giờ qua " đường link đăng ký</p>
+                        <p>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi
+                            quận đều có sân chơi 5vs5 ,7vs7 cho anh em .Hãy đặt sân ngay bây giờ qua " đường link đăng
+                            ký</p>
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
