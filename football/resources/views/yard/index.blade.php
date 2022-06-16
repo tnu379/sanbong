@@ -12,11 +12,11 @@
         <div class="page-header">
             <div class="row align-items-center mb-3">
                 <div class="col-sm mb-2 mb-sm-0">
-                    <h1 class="page-header-title">Yard <span class="badge badge-soft-dark ml-2">72,031</span></h1>
+                    <h1 class="page-header-title">Yard</h1>
                 </div>
 
                 <div class="col-sm-auto">
-                    <a class="btn btn-primary" href="ecommerce-add-product.html">Add product</a>
+                    <a class="btn btn-primary" href="{{route('yard_create')}}">Add Yard</a>
                 </div>
             </div>
             <!-- End Row -->
@@ -175,51 +175,4 @@
         <!-- End Card -->
     </div>
     <!-- End Content -->
-
-    <!-- Footer -->
-
-    <div class="footer">
-        <div class="row justify-content-between align-items-center">
-            <div class="col">
-            </div>
-            <div class="col-auto">
-                <div class="d-flex justify-content-end">
-                    <!-- List Dot -->
-                    <ul class="list-inline list-separator">
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">FAQ</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">License</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <!-- Keyboard Shortcuts Toggle -->
-                            <div class="hs-unfold">
-                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
-                                    href="javascript:;" data-hs-unfold-options='{
-                                                    "target": "#keyboardShortcutsSidebar",
-                                                    "type": "css-animation",
-                                                    "animationIn": "fadeInRight",
-                                                    "animationOut": "fadeOutRight",
-                                                    "hasOverlay": true,
-                                                    "smartPositionOff": true
-                                                   }'>
-                                    <i class="tio-command-key"></i>
-                                </a>
-                            </div>
-                            <!-- End Keyboard Shortcuts Toggle -->
-                        </li>
-                    </ul>
-                    <!-- End List Dot -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- End Footer -->
-
 @endsection

@@ -103,7 +103,6 @@
                             <th>Status</th>
                             <th>Payment</th>
                             <th>Total</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
 
@@ -150,14 +149,6 @@
                                     </div>
                                 </td>
                                 <td>{{formatDollars($order->amount)}}</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a class="btn btn-sm btn-white" href="ecommerce-order-details.html">
-                                            <i class="tio-visible-outlined"></i> View
-                                        </a>
-
-                                    </div>
-                                </td>
                             </tr>
                         @endforeach
 
@@ -207,48 +198,5 @@
             <!-- End Footer -->
         </div>
         <!-- End Card -->
-    </div>
-    <!-- End Content -->
-
-    <!-- Footer -->
-
-    <div class="footer">
-        <div class="row justify-content-between align-items-center">
-            <div class="col">
-            </div>
-            <div class="col-auto">
-                <div class="d-flex justify-content-end">
-                    <!-- List Dot -->
-                    <ul class="list-inline list-separator">
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">FAQ</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">License</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <!-- Keyboard Shortcuts Toggle -->
-                            <div class="hs-unfold">
-                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
-                                    href="javascript:;" data-hs-unfold-options='{
-                                    "target": "#keyboardShortcutsSidebar",
-                                    "type": "css-animation",
-                                    "animationIn": "fadeInRight",
-                                    "animationOut": "fadeOutRight",
-                                    "hasOverlay": true,
-                                    "smartPositionOff": true
-                                   }'>
-                                    <i class="tio-command-key"></i>
-                                </a>
-                            </div>
-                            <!-- End Keyboard Shortcuts Toggle -->
-                        </li>
-                    </ul>
-                    <!-- End List Dot -->
-                </div>
-            </div>
-        </div>
     </div>
 @endsection

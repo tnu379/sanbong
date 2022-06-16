@@ -102,7 +102,7 @@
                         <th>Payment status</th>
                         <th>Payment</th>
                         <th>Total</th>
-                        {{-- <th>Actions</th> --}}
+                        <th>Actions</th>
                     </tr>
                     </thead>
 
@@ -139,23 +139,27 @@
                             <td>
                                @if($payment->type == 2)
                                     <div class="d-flex align-items-center">
+                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
+                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
                                         <span class="text-dark">VN Pay</span>
                                     </div>
                                 @else
                                     <div class="d-flex align-items-center">
+                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
+                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
                                         <span class="text-dark">Tại Quầy</span>
                                     </div>
                                 @endif
                             </td>
                             <td>{{formatDollars($payment->amount)}}</td>
-                            {{-- <td>
+                            <td>
                                 <div class="btn-group" role="group">
                                     <a class="btn btn-sm btn-white" href="{{route('payment_change_status',$payment->id)}}">
                                         <i class="tio-visible-outlined"></i> Change status
                                     </a>
 
                                 </div>
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
 
@@ -209,44 +213,4 @@
     <!-- End Content -->
 
     <!-- Footer -->
-
-    <div class="footer">
-        <div class="row justify-content-between align-items-center">
-            <div class="col">
-            </div>
-            <div class="col-auto">
-                <div class="d-flex justify-content-end">
-                    <!-- List Dot -->
-                    <ul class="list-inline list-separator">
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">FAQ</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a class="list-separator-link" href="#">License</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <!-- Keyboard Shortcuts Toggle -->
-                            <div class="hs-unfold">
-                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
-                                   href="javascript:;" data-hs-unfold-options='{
-                                    "target": "#keyboardShortcutsSidebar",
-                                    "type": "css-animation",
-                                    "animationIn": "fadeInRight",
-                                    "animationOut": "fadeOutRight",
-                                    "hasOverlay": true,
-                                    "smartPositionOff": true
-                                   }'>
-                                    <i class="tio-command-key"></i>
-                                </a>
-                            </div>
-                            <!-- End Keyboard Shortcuts Toggle -->
-                        </li>
-                    </ul>
-                    <!-- End List Dot -->
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
