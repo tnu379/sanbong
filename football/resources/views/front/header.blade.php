@@ -146,14 +146,14 @@
                     <div class="fs-widget">
                         <h4>Tips & Guides</h4>
                         <div class="fw-recent">
-                            <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
+                            <h6><a href="{{route('post',4)}}">Tìm hiểu về các vị trí trên sân futsal</a></h6>
                             <ul>
                                 <li>3 min read</li>
                                 <li>20 Comment</li>
                             </ul>
                         </div>
                         <div class="fw-recent">
-                            <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a></h6>
+                            <h6><a href="{{route('post',3)}}">Sơ đồ chiến thuật bóng đá 5 người cơ bản, hiệu quả nhất</a></h6>
                             <ul>
                                 <li>3 min read</li>
                                 <li>20 Comment</li>
