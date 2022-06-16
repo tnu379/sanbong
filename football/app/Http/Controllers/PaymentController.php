@@ -62,6 +62,7 @@ class PaymentController extends Controller
             'order_id' => $id,
             'customer_id' => Auth::id(),
             'amount' => $order->amount,
+            'type' => 0,
             'status' => 0,
             'title' => $order->title
         ];
@@ -131,6 +132,22 @@ class PaymentController extends Controller
         $payment->save();
         return back();
     }
+    public function changeStatusVnPay($id)
+    {
+        $payment = Payment::find($id);
+        $user = Users::find($payment->user_id);
+        $coin = $user->coin;
+        if ($payment->status == 0) {
+            $payment->status = 1;
+            $user->coin = $coin + $payment->amount;
+        } else {
+            $payment->status = 0;
+            $user->coin = $coin - $payment->amount;
+        }
+        $user->save();
+        $payment->save();
+        return redirect('payments');
+    }
 
     public function vn_payment(Request $request)
     {
@@ -140,7 +157,7 @@ class PaymentController extends Controller
             'order_id' => $request['order-id'],
             'customer_id' => Auth::id(),
             'amount' => $order->amount,
-            'status' => 1,
+            'status' => 0,
             'title' => $order->title,
             'type' => 2
         ];
@@ -148,7 +165,7 @@ class PaymentController extends Controller
         //payment
         $index = rand(0000,9999);
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = route('payment_index');
+        $vnp_Returnurl = route('payment_change_status_vnp',$payment->id);
         $vnp_TmnCode = "1OYWHLYH";//Mã website tại VNPAY
         $vnp_HashSecret = "AOHCXXTJOEFXJVOSFTOLSXEJOQGQUKSC"; //Chuỗi bí mật
 

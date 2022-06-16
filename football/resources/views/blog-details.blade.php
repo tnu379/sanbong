@@ -34,7 +34,7 @@
                         <div class="quote-icon">
                             <img src="{{asset('assets/img/hero/hero-1.jpg')}}" alt="">
                         </div>
-                        <h5>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi quận đều có sân chơi 5vs5 ,7vs7 cho anh em .Hãy đặt sân ngay bây giờ qua " đường link đăng ký"</span>
+                        <h5>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi quận đều có sân chơi 5vs5 ,7vs7 cho anh em </span>
                     </div>
                     <div class="blog-details-author">
                         <div class="ba-pic">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="ba-text">
                             <h5>Nguyễn Thành Công</h5>
-                            <p>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi quận đều có sân chơi 5vs5 ,7vs7 cho anh em .Hãy đặt sân ngay bây giờ qua " đường link đăng ký"</p>
+                            <p>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi quận đều có sân chơi 5vs5 ,7vs7 cho anh em </p>
                             <div class="bp-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -86,4 +86,3 @@
     </div>
 </div>
 @endsection
-    

@@ -120,8 +120,7 @@
                             <a href="#"><img style="height:150px" src="assets/img/logo.png" alt=""></a>
                         </div>
                         <p>KINGSPORT là một sân chơi thể thao lành mạnh vui chơi giải trí khắp TP.HCM . Quy tụ khắp mọi
-                            quận đều có sân chơi 5vs5 ,7vs7 cho anh em .Hãy đặt sân ngay bây giờ qua " đường link đăng
-                            ký</p>
+                            quận đều có sân chơi 5vs5 ,7vs7 cho anh em </p>
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

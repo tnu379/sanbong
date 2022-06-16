@@ -15,7 +15,7 @@
         <!-- End Page Header -->
 
         <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
+            <div class="col-lg-10 mb-5 mb-lg-0">
                 <!-- Card -->
                 <a class="btn btn-primary" href="{{route('pdf_payment',$order->id)}}">
                     <i class="tio-print mr-1"></i> Pdf
@@ -113,99 +113,6 @@
                     </a>
                 </div>
                 <!-- End Footer -->
-            </div>
-
-            <div class="col-lg-4">
-                <!-- Card -->
-                <div class="card d-print-none">
-                    <!-- Header -->
-                    <div class="card-header">
-                        <h5 class="card-header-title">History</h5>
-                        <!-- End Unfold -->
-                    </div>
-                    <!-- End Header -->
-
-                    <!-- Body -->
-                    <div class="card-body">
-                        <span class="h1 d-block mb-3">175 <span class="h4 text-body">Payments</span></span>
-                    </div>
-                    <hr class="my-0">
-
-                    <!-- Body -->
-                    <div class="card-body">
-                        <!-- Nav -->
-                        <ul class="nav nav-segment nav-fill nav-sm-down-break" id="invoicesStatusTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="paid-tab" data-toggle="tab" href="#paid" role="tab"
-                                    aria-controls="paid" aria-selected="true">
-                                    <span class="legend-indicator bg-primary"></span>Paid (162)
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Nav -->
-                    </div>
-                    <!-- End Body -->
-
-                    <hr class="my-0">
-
-                    <!-- Body -->
-                    <div class="card-body card-body-height">
-                        <!-- Tab Content -->
-                        <div class="tab-content" id="invoicesStatusTabContent">
-                            <div class="tab-pane fade show active" id="paid" role="tabpanel" aria-labelledby="paid-tab">
-                                <!-- List Group -->
-                                <ul class="list-group list-group-flush list-group-no-gutters">
-                                    <!-- List Item -->
-                                    <li class="list-group-item">
-                                        <div class="mb-1">
-                                            <h5 class="mb-0">Update subscription method</h5>
-                                            <span class="font-size-sm">Rocket Science Group</span>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                            <span class="h4 text-primary">$530.00 USD</span>
-                                            <span class="font-size-sm">25 May, 2020</span>
-                                        </div>
-                                    </li>
-                                    <!-- End List Item -->
-
-                                    <!-- List Item -->
-                                    <li class="list-group-item">
-                                        <div class="mb-1">
-                                            <h5 class="mb-0">Develop Slack mobile app</h5>
-                                            <span class="font-size-sm">Slack Technologies</span>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                            <span class="h4 text-primary">$2500.00 USD</span>
-                                            <span class="font-size-sm">25 May, 2020</span>
-                                        </div>
-                                    </li>
-                                    <!-- End List Item -->
-
-                                    <!-- List Item -->
-                                    <li class="list-group-item">
-                                        <div class="mb-1">
-                                            <h5 class="mb-0">Create a new database for Webdev</h5>
-                                            <span class="font-size-sm">Google LLC</span>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                            <span class="h4 text-primary">$7000.00 USD</span>
-                                            <span class="font-size-sm">10 May, 2020</span>
-                                        </div>
-                                    </li>
-                                    <!-- End List Item -->
-                                </ul>
-                                <!-- End List Group -->
-                            </div>
-                        </div>
-                        <!-- End Tab Content -->
-                    </div>
-                    <!-- End Body -->
-
-                </div>
-                <!-- End Card -->
             </div>
         </div>
     </div>

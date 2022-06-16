@@ -55,7 +55,7 @@ Route::get('/register', function () {
         'roles' => $role,
         'districts' => $district
     ]);
-});
+})->name('register');
 Route::get('/', function (Request $request) {
     $vendor = Users::query()->where('role', 2);
     if (isset($request['district'])) {
@@ -122,6 +122,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/create', [\App\Http\Controllers\PaymentController::class, 'create'])->name('payment_create');
         Route::get('/edit/{id}', [\App\Http\Controllers\PaymentController::class, 'edit'])->name('payment_edit');
         Route::get('/change-status/{id}', [\App\Http\Controllers\PaymentController::class, 'changeStatus'])->name('payment_change_status');
+        Route::get('/change-status-vn-pay/{id}', [\App\Http\Controllers\PaymentController::class, 'changeStatusVnPay'])->name('payment_change_status_vnp');
 
         //        Route::get('/delete/{id}', [YardController::class, 'destroy'])->name('yard_del');
         //        Route::post('/update/{id}', [YardController::class, 'update'])->name('yard_update');
