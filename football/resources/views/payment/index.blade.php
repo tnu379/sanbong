@@ -31,13 +31,6 @@
                     </a>
                 </span>
 
-                <!-- Nav -->
-                <ul class="nav nav-tabs page-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">All products</a>
-                    </li>
-                </ul>
-                <!-- End Nav -->
             </div>
             <!-- End Nav Scroller -->
         </div>
@@ -139,14 +132,11 @@
                             <td>
                                @if($payment->type == 2)
                                     <div class="d-flex align-items-center">
-                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
                                         <span class="text-dark">VN Pay</span>
                                     </div>
                                 @else
                                     <div class="d-flex align-items-center">
-                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                             src="assets\svg\brands\mastercard.svg" alt="Image Description">
+
                                         <span class="text-dark">Tại Quầy</span>
                                     </div>
                                 @endif
