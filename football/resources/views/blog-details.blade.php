@@ -8,8 +8,8 @@
                     <h3>GIỚI THIỆU VỀ KING SPORT</h3>
                     <ul>
                         <li>by Admin</li>
-                        <li>Aug,15, 2019</li>
-                        <li>20 Comment</li>
+                        <li>tháng 5, 20, 2020</li>
+                        <li>20 Bình luận</li>
                     </ul>
                 </div>
             </div>

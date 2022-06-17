@@ -7,9 +7,7 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
                         <div class="hi-text">
-                            <span>Shape your body</span>
-                            <h1>Be <strong>strong</strong> traning hard</h1>
-                            <a href="#" class="primary-btn">Get info</a>
+                            <span>Kingsport- nơi vui chơi giải trí đá banh</span>
                         </div>
                     </div>
                 </div>
@@ -20,9 +18,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
                         <div class="hi-text">
-                            <span>Shape your body</span>
-                            <h1>Be <strong>strong</strong> traning hard</h1>
-                            <a href="#" class="primary-btn">Get info</a>
+                            <span>Kingsport- nơi vui chơi giải trí đá banh</span>
+
                         </div>
                     </div>
                 </div>
@@ -87,8 +84,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <span>Our Classes</span>
-                    <h2>WHAT WE CAN OFFER</h2>
+                    <span>Về Sân</span>
+                    <h2>Chúng tôi đề xuất một số sân</h2>
                 </div>
             </div>
             <div class="col-4">
@@ -209,9 +206,8 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="bs-text">
-                    <h2>registration now to get more deals</h2>
-                    <div class="bt-tips">Where health, beauty and fitness meet.</div>
-                    <a href="{{route('register')}}" class="primary-btn  btn-normal">Appointment</a>
+                    <h2>Đăng ký tại đây</h2>
+                    <a href="{{route('register')}}" class="primary-btn  btn-normal">Đăng ký</a>
                 </div>
             </div>
         </div>

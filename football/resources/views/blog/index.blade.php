@@ -27,9 +27,8 @@
                         <div class="bi-text">
                             <h5><a href="{{route('post',$blog->id)}}}">{{$blog->title}}</a></h5>
                             <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
+                                <li>bởi Admin</li>
+                                <li>{{rand(10,100)}} Bình luận</li>
                             </ul>
                             <p>{{$blog->content}}</p>
                         </div>

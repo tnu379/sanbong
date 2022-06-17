@@ -76,12 +76,12 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('front') }}">Home</a></li>
+                            <li class="active"><a href="{{ route('front') }}">Trang chủ</a></li>
                             {{-- <li><a href="#about-us">About Us</a></li> --}}
-                            <li><a href="{{ route('about-us') }}">About Us</a></li>
+                            <li><a href="{{ route('about-us') }}">Về chúng tôi</a></li>
                             <li><a href='{{ route('blogs') }}'>Blog</a>
                             </li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -134,28 +134,27 @@
                     <div class="fs-widget">
                         <h4>Đường dẫn</h4>
                         <ul>
-                            <li><a href="#">About</a></li>
+                            <li><a href="#">Về chúng tôi</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Classes</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Liên hẹ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="fs-widget">
-                        <h4>Tips & Guides</h4>
+                        <h4>Mẹo và hướng dẫn</h4>
                         <div class="fw-recent">
                             <h6><a href="{{route('post',4)}}">Tìm hiểu về các vị trí trên sân futsal</a></h6>
                             <ul>
-                                <li>3 min read</li>
-                                <li>20 Comment</li>
+                                <li>3 phút đọc</li>
+                                <li>20 Bình luận</li>
                             </ul>
                         </div>
                         <div class="fw-recent">
                             <h6><a href="{{route('post',3)}}">Sơ đồ chiến thuật bóng đá 5 người cơ bản, hiệu quả nhất</a></h6>
                             <ul>
-                                <li>3 min read</li>
-                                <li>20 Comment</li>
+                                <li>3 phút đọc</li>
+                                <li>20 Bình luận</li>
                             </ul>
                         </div>
                     </div>

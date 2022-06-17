@@ -6,12 +6,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb-text">
-                    <h2>Contact Us</h2>
-                    <div class="bt-option">
-                        <a href="./index.html">Home</a>
-                        <a href="#">Pages</a>
-                        <span>Contact us</span>
-                    </div>
+                    <h2>Liên Hệ</h2>
                 </div>
             </div>
         </div>
@@ -23,8 +18,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-title contact-title">
-                    <span>Contact Us</span>
-                    <h2>GET IN TOUCH</h2>
+                    <span>Liên Hệ</span>
                 </div>
                 <div class="contact-widget">
                     <div class="cw-text">
@@ -47,11 +41,11 @@
                 <div class="leave-comment">
                     <form action="{{ route('mail-for-admin') }}" method="POST">
                         @csrf
-                        <input type="text" name="name" placeholder="Name">
-                        <input type="text" name="phone" placeholder="Phone">
+                        <input type="text" name="name" placeholder="Tên">
+                        <input type="text" name="phone" placeholder="Số điện thoại">
                         <input type="text" name="email" placeholder="Email">
-                        <textarea name="content" placeholder="Content"></textarea>
-                        <button type="submit">Submit</button>
+                        <textarea name="content" placeholder="Nội dung"></textarea>
+                        <button type="submit">Gửi</button>
                     </form>
                 </div>
             </div>
