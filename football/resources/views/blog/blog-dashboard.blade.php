@@ -88,7 +88,7 @@
                                         <label class="custom-control-label" for="productsCheck1"></label>
                                     </div>
                                 </td>
-                                <td class="table-column-pl-0">
+                                <td  class="table-column-pl-0">
                                     <a class="media align-items-center" href="ecommerce-product-details.html">
                                         <img class="avatar avatar-lg mr-3" src="assets\img\400x400\img4.jpg"
                                             alt="Image Description">
@@ -97,7 +97,14 @@
                                         </div>
                                     </a>
                                 </td>
-                                <td>{{$blog->content}}</td>
+                                <td style=" width: 500px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                line-height: 25px;
+                                -webkit-line-clamp: 3;
+                                height: 75px;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;">{{$blog->content}}</td>
                                 <td> <a class="dropdown-item" href="{{route('update',$blog->id)}}">
                                     <i class="tio-edit dropdown-item-icon"></i> Edit
                                 </a></td>
