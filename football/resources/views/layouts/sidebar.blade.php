@@ -5,7 +5,12 @@
             <div class="navbar-vertical-footer-offset">
                 <div style="height: 150px;" class="navbar-brand-wrapper justify-content-between">
                     <!-- Logo -->
-                    <a class="navbar-brand" href="{{route('admin')}}" aria-label="Front">
+                    <?php if(session('role') == 3){
+                       $a = route('payment_index');
+                        }else{
+                           $a= route('admin');
+                        }?>
+                    <a class="navbar-brand" href="{{$a}}" aria-label="Front">
                         <img style="    width: 114px;
                         border-radius: 50%;
                         height: 120px;object-fit: cover" class="navbar-brand-logo" src="{{asset('assets/img/logo.png')}}"alt="Logo">
