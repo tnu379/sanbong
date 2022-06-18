@@ -66,7 +66,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <label class="anim">
                     <a href="/register" style="display: contents;">Sign in</a>
-                    <a href="#">Forgot Password</a>
                 </label>
                 <div class="clear"></div>
                 <div class="submit-agileits">

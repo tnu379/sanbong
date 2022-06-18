@@ -2,12 +2,12 @@
 @section('title', 'Yard')
 @section('content')
     <div class="content container-fluid">
-    <?php
-    function formatDollars($dollars)
-    {
-        return 'đ' . sprintf('%0.0f', $dollars);
-    } ?>
-    <!-- Page Header -->
+        <?php
+        function formatDollars($dollars)
+        {
+            return 'đ' . sprintf('%0.0f', $dollars);
+        } ?>
+        <!-- Page Header -->
         <div class="page-header">
             <div class="row align-items-center mb-3">
                 <div class="col-sm">
@@ -16,7 +16,11 @@
                 </div>
             </div>
             <!-- End Row -->
-
+            @if (session()->has('msg'))
+                <div class="alert alert-success">
+                    {{ session()->get('msg') }}
+                </div>
+            @endif
             <!-- Nav Scroller -->
             <div class="js-nav-scroller hs-nav-scroller-horizontal">
                 <span class="hs-nav-scroller-arrow-prev" style="display: none;">
@@ -51,7 +55,7 @@
                                     </div>
                                 </div>
                                 <input id="datatableSearch" type="search" class="form-control" placeholder="Search orders"
-                                       aria-label="Search orders">
+                                    aria-label="Search orders">
                             </div>
                             <!-- End Search -->
                         </form>
@@ -64,8 +68,9 @@
             <!-- Table -->
             <div class="table-responsive datatable-custom">
                 <table id="datatable"
-                       class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
-                       style="width: 100%" data-hs-datatables-options='{
+                    class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                    style="width: 100%"
+                    data-hs-datatables-options='{
                            "columnDefs": [{
                               "targets": [0],
                               "orderable": false
@@ -82,76 +87,81 @@
                            "pagination": "datatablePagination"
                          }'>
                     <thead class="thead-light">
-                    <tr>
-                        <th scope="col" class="table-column-pr-0">
-                            <div class="custom-control custom-checkbox">
-                                <input id="datatableCheckAll" type="checkbox" class="custom-control-input">
-                                <label class="custom-control-label" for="datatableCheckAll"></label>
-                            </div>
-                        </th>
-                        <th class="table-column-pl-0">Order</th>
-                        <th>Date</th>
-                        <th>Customer</th>
-                        <th>Payment status</th>
-                        <th>Payment</th>
-                        <th>Total</th>
-                        <th>Actions</th>
-                    </tr>
+                        <tr>
+                            <th scope="col" class="table-column-pr-0">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="datatableCheckAll" type="checkbox" class="custom-control-input">
+                                    <label class="custom-control-label" for="datatableCheckAll"></label>
+                                </div>
+                            </th>
+                            <th class="table-column-pl-0">Order</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Payment status</th>
+                            <th>Payment</th>
+                            <th>Total</th>
+                            @if (session('role') == 2)
+                                <th>Actions</th>
+                            @endif
+                        </tr>
                     </thead>
 
                     <tbody>
-                    @foreach ($data as $payment)
-                        <tr>
-                            <td class="table-column-pr-0">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="ordersCheck1">
-                                    <label class="custom-control-label" for="ordersCheck1"></label>
-                                </div>
-                            </td>
-                            <td class="table-column-pl-0">
-                                <a href="ecommerce-order-details.html">#{{$payment->id}}</a>
-                            </td>
-                            <td>{{date($payment->created_at)}}</td>
-                            <td>
-                                <a class="text-body" href="">{{$payment->title}}</a>
-                            </td>
-                            <td>
-                                @if ($payment->status == 1)
-                                    <span class="badge badge-soft-info">
-                                        <span class="legend-indicator bg-success"></span>
-                                        Paid
-                                    </span>
-                                @else
-                                    <span class="badge badge-soft-info">
-                                        <span class="legend-indicator bg-warning"></span>
-                                        pending
-                                    </span>
-                                @endif
-
-                            </td>
-                            <td>
-                               @if($payment->type == 2)
-                                    <div class="d-flex align-items-center">
-                                        <span class="text-dark">VN Pay</span>
+                        @foreach ($data as $payment)
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="ordersCheck1">
+                                        <label class="custom-control-label" for="ordersCheck1"></label>
                                     </div>
-                                @else
-                                    <div class="d-flex align-items-center">
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="ecommerce-order-details.html">#{{ $payment->id }}</a>
+                                </td>
+                                <td>{{ date($payment->created_at) }}</td>
+                                <td>
+                                    <a class="text-body" href="">{{ $payment->title }}</a>
+                                </td>
+                                <td>
+                                    @if ($payment->status == 1)
+                                        <span class="badge badge-soft-info">
+                                            <span class="legend-indicator bg-success"></span>
+                                            Paid
+                                        </span>
+                                    @else
+                                        <span class="badge badge-soft-info">
+                                            <span class="legend-indicator bg-warning"></span>
+                                            pending
+                                        </span>
+                                    @endif
 
-                                        <span class="text-dark">Tại Quầy</span>
-                                    </div>
+                                </td>
+                                <td>
+                                    @if ($payment->type == 2)
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-dark">VN Pay</span>
+                                        </div>
+                                    @else
+                                        <div class="d-flex align-items-center">
+
+                                            <span class="text-dark">Tại Quầy</span>
+                                        </div>
+                                    @endif
+                                </td>
+                                <td>{{ formatDollars($payment->amount) }}</td>
+                                @if (session('role') == 2)
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a class="btn btn-sm btn-white"
+                                                href="{{ route('payment_change_status', $payment->id) }}">
+                                                <i class="tio-visible-outlined"></i> Change status
+                                            </a>
+
+                                        </div>
+                                    </td>
                                 @endif
-                            </td>
-                            <td>{{formatDollars($payment->amount)}}</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <a class="btn btn-sm btn-white" href="{{route('payment_change_status',$payment->id)}}">
-                                        <i class="tio-visible-outlined"></i> Change status
-                                    </a>
-
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach
+                            </tr>
+                        @endforeach
 
                     </tbody>
                 </table>
@@ -167,7 +177,8 @@
                             <span class="mr-2">Showing:</span>
 
                             <!-- Select -->
-                            <select id="datatableEntries" class="js-select2-custom" data-hs-select2-options='{
+                            <select id="datatableEntries" class="js-select2-custom"
+                                data-hs-select2-options='{
                                   "minimumResultsForSearch": "Infinity",
                                   "customClass": "custom-select custom-select-sm custom-select-borderless",
                                   "dropdownAutoWidth": true,

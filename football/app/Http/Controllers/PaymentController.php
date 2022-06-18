@@ -67,7 +67,7 @@ class PaymentController extends Controller
             'title' => $order->title
         ];
         $payment = Payment::create($paymentData);
-        return redirect('admin');
+        return redirect('payments')->with('msg', 'Order success');
     }
 
     /**
@@ -146,7 +146,7 @@ class PaymentController extends Controller
         }
         $user->save();
         $payment->save();
-        return redirect('payments');
+        return redirect('payments')->with('msg', 'Payment success');
     }
 
     public function vn_payment(Request $request)
