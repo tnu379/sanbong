@@ -160,12 +160,12 @@ class UserController extends Controller
             $image      = $request->file('avatarUploader');
             $fileName   = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('avatarUploader')->storeAs('uploads/avatar/', $fileName, 'public');
-            $data->img = '/storage/' . $path;
-            $data->save();
+            $user->img = '/storage/' . $path;
+            $user->save();
         }
         if ($request['password'] !== null) {
-            $data->password =  Hash::make($request['password']);
-            $data->save();
+            $user->password = Hash::make($request['password']);
+            $user->save();
         }
 
         return redirect('users/');
