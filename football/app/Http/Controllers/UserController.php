@@ -87,6 +87,8 @@ class UserController extends Controller
                 $path = $request->file('avatarUploader')->storeAs('uploads/avatar/', $fileName, 'public');
                 $data->img = '/storage/' . $path;
                 $data->save();
+                $request->session()->put('img', $data->img != '' ?$data->img  : '');
+
                 return redirect('users/');
             }
             return redirect('users/');
