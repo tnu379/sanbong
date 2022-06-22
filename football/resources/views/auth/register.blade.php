@@ -49,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <input type="text" name="email" placeholder="Email" required="" />
                 </div>
                 <div class="form-sub-w3">
-                    <input type="text" name="user_name" placeholder="Username" required="" />
+                    <input type="text" name="full_name" placeholder="Username" required="" />
                 </div>
                 <div class="form-sub-w3">
                     <input type="text" name="phone" placeholder="Phone" required="" />

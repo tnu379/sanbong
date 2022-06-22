@@ -193,11 +193,10 @@ class UserController extends Controller
             'password' => $password,
         ];
         if (Auth::attempt($credentials)) {
-
             $user = Users::find(Auth::id());
             $request->session()->put('user_name', $user->full_name);
             $request->session()->put('user_email', $user->email);
-            $request->session()->put('img', $user->img);
+            $request->session()->put('img', $user->img != '' ?$user->img  : '');
             $request->session()->put('role', $user->role);
 
            if($user->role == 2){
@@ -211,7 +210,7 @@ class UserController extends Controller
     public function registerStore(Request $request){
         $userData = [
             'email' => $request['email'],
-            'password' =>  Hash::make($request['password']),
+            'password' =>  Hash::make($request['Password']),
             'full_name' => $request['full_name'] ?? "",
             'phone' => $request['phone'] ?? 0,
             'role' => 3
