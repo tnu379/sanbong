@@ -201,7 +201,7 @@
                                         <select class="js-select2-custom custom-select" size="1" style="opacity: 0;"
                                             name="district">
                                             <option selected value="{{ $user->district }}">
-                                                {{ $districts[$user->district] }}</option>
+                                                {{ $districts[$user->district ?? 1] }}</option>
                                             @foreach ($districts as $key => $value)
                                                 <option value="{{ $key }}">{{ $value }}</option>
                                             @endforeach
