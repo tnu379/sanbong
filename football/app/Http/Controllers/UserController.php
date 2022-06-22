@@ -162,6 +162,7 @@ class UserController extends Controller
             $path = $request->file('avatarUploader')->storeAs('uploads/avatar/', $fileName, 'public');
             $user->img = '/storage/' . $path;
             $user->save();
+            $request->session()->put('img', $user->img != '' ?$user->img  : '');
         }
         if ($request['password'] !== null) {
             $user->password = Hash::make($request['password']);
